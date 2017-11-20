@@ -1,0 +1,146 @@
+sudo -E bash -c "make -C ipmiComm"
+make[1]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm'
+make -C ./configure install 
+make[2]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/configure'
+perl -CSD /epics/bases/base-3.15.5/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../..
+mkdir O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../.. \
+    T_A=linux-x86_64 install
+make[3]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/configure/O.linux-x86_64'
+perl -CSD /epics/bases/base-3.15.5/bin/linux-x86_64/convertRelease.pl checkRelease
+make[3]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/configure/O.linux-x86_64'
+make[2]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/configure'
+make -C ./src install 
+make[2]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/src'
+perl -CSD /epics/bases/base-3.15.5/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../..
+mkdir O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../.. \
+    T_A=linux-x86_64 install
+make[3]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/src/O.linux-x86_64'
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF subIpmiComm.d  ../subIpmiComm.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF drvMchServerPc.d  ../drvMchServerPc.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF drvMchPicmg.d  ../drvMchPicmg.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF picmgDef.d  ../picmgDef.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF ipmiDef.d  ../ipmiDef.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF ipmiMsg.d  ../ipmiMsg.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF drvMchMsg.d  ../drvMchMsg.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF devMch.d  ../devMch.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF drvMch.d  ../drvMch.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../drvMch.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../devMch.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../drvMchMsg.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../ipmiMsg.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../ipmiDef.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../picmgDef.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../drvMchPicmg.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../drvMchServerPc.c
+/usr/bin/gcc  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64 -fPIC -I. -I../O.Common -I. -I. -I.. -I../../include/compiler/gcc -I../../include/os/Linux -I../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../subIpmiComm.c
+/usr/bin/ar -rc    libipmiComm.a        drvMch.o devMch.o drvMchMsg.o ipmiMsg.o ipmiDef.o picmgDef.o drvMchPicmg.o drvMchServerPc.o subIpmiComm.o 
+/usr/bin/ranlib libipmiComm.a
+Installing library ../../lib/linux-x86_64/libipmiComm.a
+make[3]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/src/O.linux-x86_64'
+make[2]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/src'
+make -C ./Db install 
+make[2]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/Db'
+perl -CSD /epics/bases/base-3.15.5/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../..
+mkdir O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../.. \
+    T_A=linux-x86_64 install
+make[3]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/Db/O.linux-x86_64'
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/server_pc_lcls.db -S../server_pc_lcls.substitutions  > server_pc_lcls.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/shelf_atca_7slot_lcls.db -S../shelf_atca_7slot_lcls.substitutions  > shelf_atca_7slot_lcls.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/shelf_microtca_12slot_lcls.db -S../shelf_microtca_12slot_lcls.substitutions  > shelf_microtca_12slot_lcls.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/server_pc.db -S../server_pc.substitutions  > server_pc.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/shelf_atca_7slot.db -S../shelf_atca_7slot.substitutions  > shelf_atca_7slot.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/shelf_microtca_12slot.db -S../shelf_microtca_12slot.substitutions  > shelf_microtca_12slot.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/system_common_lcls.db -S../system_common_lcls.substitutions  > system_common_lcls.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/fru_atca_rtm.db -S../fru_atca_rtm.substitutions  > fru_atca_rtm.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/fru_atca_fb.db -S../fru_atca_fb.substitutions  > fru_atca_fb.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/fru_cu.db -S../fru_cu.substitutions  > fru_cu.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/fru_pm.db -S../fru_pm.substitutions  > fru_pm.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/fru_extended.db -S../fru_extended.substitutions  > fru_extended.db.d
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi -D  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o ../O.Common/fru_basic.db -S../fru_basic.substitutions  > fru_basic.db.d
+Inflating database from ../fru_basic.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o fru_basic.db -S../fru_basic.substitutions 
+Inflating database from ../fru_extended.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o fru_extended.db -S../fru_extended.substitutions 
+Inflating database from ../fru_pm.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o fru_pm.db -S../fru_pm.substitutions 
+Installing created db file ../../db/fru_basic.db
+Inflating database from ../fru_cu.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o fru_cu.db -S../fru_cu.substitutions 
+Inflating database from ../fru_atca_fb.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o fru_atca_fb.db -S../fru_atca_fb.substitutions 
+Inflating database from ../fru_atca_rtm.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o fru_atca_rtm.db -S../fru_atca_rtm.substitutions 
+Inflating database from ../system_common_lcls.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o system_common_lcls.db -S../system_common_lcls.substitutions 
+Installing created db file ../../db/fru_cu.db
+Installing created db file ../../db/fru_pm.db
+Inflating database from ../shelf_microtca_12slot.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o shelf_microtca_12slot.db -S../shelf_microtca_12slot.substitutions 
+Installing created db file ../../db/fru_atca_fb.db
+Installing created db file ../../db/fru_atca_rtm.db
+Inflating database from ../shelf_atca_7slot.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o shelf_atca_7slot.db -S../shelf_atca_7slot.substitutions 
+Inflating database from ../server_pc.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o server_pc.db -S../server_pc.substitutions 
+Installing created db file ../../db/shelf_microtca_12slot.db
+Installing created db file ../../db/system_common_lcls.db
+Inflating database from ../shelf_microtca_12slot_lcls.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o shelf_microtca_12slot_lcls.db -S../shelf_microtca_12slot_lcls.substitutions 
+Installing created db file ../../db/shelf_atca_7slot.db
+Inflating database from ../shelf_atca_7slot_lcls.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o shelf_atca_7slot_lcls.db -S../shelf_atca_7slot_lcls.substitutions 
+Installing created db file ../../db/server_pc.db
+Inflating database from ../server_pc_lcls.substitutions 
+/epics/bases/base-3.15.5/bin/linux-x86_64/msi  -I../O.Common  -I. -I.. -I../O.Common -I../../db -I/epics/bases/base-3.15.5/epics-modules/asyn/db -I/epics/bases/base-3.15.5/epics-modules/iocStats/db -I/epics/bases/base-3.15.5/db -o server_pc_lcls.db -S../server_pc_lcls.substitutions 
+Installing created db file ../../db/fru_extended.db
+Installing created db file ../../db/shelf_microtca_12slot_lcls.db
+Installing created db file ../../db/shelf_atca_7slot_lcls.db
+Installing created db file ../../db/server_pc_lcls.db
+make[3]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/Db/O.linux-x86_64'
+make[2]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/Db'
+make -C ./ipmiIocApp install 
+make[2]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp'
+make -C ./src install 
+make[3]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/src'
+perl -CSD /epics/bases/base-3.15.5/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../..
+mkdir O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../../.. \
+    T_A=linux-x86_64 install
+make[4]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/src/O.linux-x86_64'
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64  -I. -I../O.Common -I. -I. -I.. -I../../../include/compiler/gcc -I../../../include/os/Linux -I../../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF ipmiCommIocMain.d  ../ipmiCommIocMain.cpp
+Creating dbd file ipmiCommIoc.dbd
+perl -CSD /epics/bases/base-3.15.5/bin/linux-x86_64/dbdExpand.pl   -I. -I.. -I../O.Common -I../../../dbd -I/epics/bases/base-3.15.5/epics-modules/asyn/dbd -I/epics/bases/base-3.15.5/epics-modules/iocStats/dbd -I/epics/bases/base-3.15.5/dbd -o ipmiCommIoc.dbd base.dbd asyn.dbd drvAsynIPPort.dbd iocAdmin.dbd ipmiComm.dbd
+perl -CSD /epics/bases/base-3.15.5/bin/linux-x86_64/registerRecordDeviceDriver.pl   -I. -I.. -I../O.Common -I../../../dbd -I/epics/bases/base-3.15.5/epics-modules/asyn/dbd -I/epics/bases/base-3.15.5/epics-modules/iocStats/dbd -I/epics/bases/base-3.15.5/dbd    -o ipmiCommIoc_registerRecordDeviceDriver.cpp ../O.Common/ipmiCommIoc.dbd ipmiCommIoc_registerRecordDeviceDriver /home/jhlee/e3/tools/e3-ipmiComm/ipmiComm
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64  -I. -I../O.Common -I. -I. -I.. -I../../../include/compiler/gcc -I../../../include/os/Linux -I../../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -MM -MF ipmiCommIoc_registerRecordDeviceDriver.d  ipmiCommIoc_registerRecordDeviceDriver.cpp
+Installing created dbd file ../../../dbd/ipmiCommIoc.dbd
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64  -I. -I../O.Common -I. -I. -I.. -I../../../include/compiler/gcc -I../../../include/os/Linux -I../../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ipmiCommIoc_registerRecordDeviceDriver.cpp
+/usr/bin/g++  -D_GNU_SOURCE -D_DEFAULT_SOURCE            -D_X86_64_  -DUNIX  -Dlinux     -O3 -g   -Wall      -mtune=generic     -m64  -I. -I../O.Common -I. -I. -I.. -I../../../include/compiler/gcc -I../../../include/os/Linux -I../../../include   -I/epics/bases/base-3.15.5/epics-modules/asyn/include  -I/epics/bases/base-3.15.5/epics-modules/iocStats/include/os/Linux -I/epics/bases/base-3.15.5/epics-modules/iocStats/include -I/epics/bases/base-3.15.5/include/compiler/gcc -I/epics/bases/base-3.15.5/include/os/Linux -I/epics/bases/base-3.15.5/include        -c ../ipmiCommIocMain.cpp
+/usr/bin/g++ -o ipmiCommIoc -Wl,-Bstatic -L/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/lib/linux-x86_64 -L/epics/bases/base-3.15.5/epics-modules/asyn/lib/linux-x86_64 -L/epics/bases/base-3.15.5/epics-modules/iocStats/lib/linux-x86_64 -L/epics/bases/base-3.15.5/lib/linux-x86_64 -Wl,-rpath,/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/lib/linux-x86_64 -Wl,-rpath,/epics/bases/base-3.15.5/epics-modules/asyn/lib/linux-x86_64 -Wl,-rpath,/epics/bases/base-3.15.5/epics-modules/iocStats/lib/linux-x86_64 -Wl,-rpath,/epics/bases/base-3.15.5/lib/linux-x86_64           -rdynamic -m64            ipmiCommIoc_registerRecordDeviceDriver.o ipmiCommIocMain.o    -lasyn -ldevIocStats -lipmiComm -ldbRecStd -ldbCore -lca -lCom -Wl,-Bdynamic  -lpthread   -lreadline -lm -lrt -ldl -lgcc
+Installing created executable ../../../bin/linux-x86_64/ipmiCommIoc
+make[4]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/src/O.linux-x86_64'
+make[3]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/src'
+make -C ./Db install 
+make[3]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/Db'
+make -C ./common install 
+make[4]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/Db/common'
+perl -CSD /epics/bases/base-3.15.5/bin/linux-x86_64/makeMakefile.pl O.linux-x86_64 ../../../..
+mkdir O.Common
+make -C O.linux-x86_64 -f ../Makefile TOP=../../../.. \
+    T_A=linux-x86_64 install
+make[5]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/Db/common/O.linux-x86_64'
+make[5]: Nothing to be done for 'install'.
+make[5]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/Db/common/O.linux-x86_64'
+make[4]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/Db/common'
+make[3]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp/Db'
+make[2]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/ipmiIocApp'
+make -C ./iocBoot install 
+make[2]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/iocBoot'
+make -C ./sioc-ipmicomm-test install 
+make[3]: Entering directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/iocBoot/sioc-ipmicomm-test'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/iocBoot/sioc-ipmicomm-test'
+make[2]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm/iocBoot'
+make[1]: Leaving directory '/home/jhlee/e3/tools/e3-ipmiComm/ipmiComm'

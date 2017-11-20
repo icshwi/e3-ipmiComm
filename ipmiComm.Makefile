@@ -1,63 +1,95 @@
 
 
-#where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 include $(REQUIRE_TOOLS)/driver.makefile
 
-#APP:=modbusApp
-#APPDB:=$(APP)/Db
-#APPSRC:=$(APP)/src
-
-#USR_INCLUDES += -I$(where_am_I)/$(APPSRC)
-
-#TEMPLATES += $(wildcard $(APPDB)/*.template)
-
-
-#SOURCES   += $(APPSRC)/modbusInterpose.c
-#SOURCES   += $(APPSRC)/drvModbusAsyn.c
-#DBDS      += $(APPSRC)/modbusSupport.dbd
-#HEADERS   += $(APPSRC)/drvModbusAsyn.h
-
 
 # 
-#USR_CFLAGS   += -Wno-unused-variable
-#USR_CFLAGS   += -Wno-unused-function
-#USR_CPPFLAGS += -Wno-unused-variable
-#USR_CPPFLAGS += -Wno-unused-function
+USR_CFLAGS   += -Wno-unused-but-set-variable
+USR_CPPFLAGS += -Wno-unused-but-set-variable
+#
 
-#
-#
-# The following lines must be updated according to your ipmiComm
-#
-# Examples...
+
+APP:=.
+APPDB:=$(APP)/Db
+APPSRC:=$(APP)/src
+
+USR_INCLUDES += -I$(where_am_I)/$(APPSRC)
+
+
+# Even if we convert template and substitutions files to db,
+# I would like to put them into e3 environment
+# in order to study them carefully
 # 
-# USR_CFLAGS += -fPIC
-# USR_CFLAGS   += -DDEBUG_PRINT
-# USR_CPPFLAGS += -DDEBUG_PRINT
-# USR_CPPFLAGS += -DUSE_TYPED_RSET
-# USR_INCLUDES += -I/usr/include/libusb-1.0
-# USR_LDFLAGS += -lusb-1.0
+TEMPLATES += $(wildcard $(APPDB)/*.db)
+TEMPLATES += $(wildcard $(APPDB)/*.template)
+TEMPLATES += $(wildcard $(APPDB)/*.substitutions)
 
-# USR_LDFLAGS += -L /opt/etherlab/lib
-# USR_LDFLAGS += -lethercat
-# USR_LDFLAGS += -Wl,-rpath=/opt/etherlab/lib
-#
-#
-# PCIAPP:= pciApp
-#
-# HEADERS += $(PCIAPP)/devLibPCI.h
-# HEADERS += $(PCIAPP)/devLibPCIImpl.h
 
-# SOURCES += $(wildcard $(PCIAPP)/devLib*.c)
-# SOURCES += $(PCIAPP)/pcish.c
-# SOURCES_Linux += $(PCIAPP)/os/Linux/devLibPCIOSD.c
+DBDS      += $(APPSRC)/ipmiComm.dbd
+DBDS      += $(APPSRC)/drvMchServerPc.dbd
+DBDS      += $(APPSRC)/drvMchPicmg.dbd
 
-# DBDS += $(PCIAPP)/epicspci.dbd
 
-# MRMSHARED:= mrmShared
-# MRMSHAREDSRC:=$(MRMSHARED)/src
-# MRMSHAREDDB:=$(MRMSHARED)/Db
-# TEMPLATES += $(wildcard $(MRMSHAREDDB)/*.db)
-# TEMPLATES += $(wildcard $(MRMSHAREDDB)/*.template)
-# TEMPLATES += $(wildcard $(MRMSHAREDDB)/*.substitutions)
+SOURCES   += $(APPSRC)/drvMch.c
+SOURCES   += $(APPSRC)/devMch.c
+SOURCES   += $(APPSRC)/drvMchMsg.c
+SOURCES   += $(APPSRC)/ipmiMsg.c
+SOURCES   += $(APPSRC)/ipmiDef.c
+SOURCES   += $(APPSRC)/picmgDef.c
+SOURCES   += $(APPSRC)/drvMchPicmg.c
+SOURCES   += $(APPSRC)/drvMchServerPc.c
+SOURCES   += $(APPSRC)/subIpmiComm.c
 
+
+
+EPICS_BASE_HOST_BIN = $(EPICS_BASE)/bin/$(EPICS_HOST_ARCH)
+MSI =  $(EPICS_BASE_HOST_BIN)/msi
+
+
+USR_DBFLAGS += -I . -I ..
+USR_DBFLAGS += -I$(EPICS_BASE)/db
+USR_DBFLAGS += -I$(APPDB)
+
+
+# Order is matter
+
+SUBS += $(APPDB)/fru_basic.substitutions
+SUBS += $(APPDB)/fru_extended.substitutions
+SUBS += $(APPDB)/fru_pm.substitutions
+SUBS += $(APPDB)/fru_cu.substitutions
+SUBS  = $(APPDB)/fru_atca_fb.substitutions
+SUBS += $(APPDB)/fru_atca_rtm.substitutions
+
+SUBS += $(APPDB)/server_pc.substitutions
+SUBS += $(APPDB)/shelf_atca_7slot.substitutions
+SUBS += $(APPDB)/shelf_microtca_12slot.substitutions
+
+# Maybe we will create ESS one based on them
+SUBS += $(APPDB)/server_pc_lcls.substitutions
+SUBS += $(APPDB)/shelf_atca_7slot_lcls.substitutions
+SUBS += $(APPDB)/shelf_microtca_12slot_lcls.substitutions
+SUBS += $(APPDB)/system_common_lcls.substitutions
+
+
+TEMS = $(wildcard $(APPDB)/*.template)
+
+
+db: $(SUBS) $(TEMS)
+
+$(SUBS): 
+	@printf "Inflating database ... %44s >>> %40s \n" "$@" "$(basename $(@)).db"
+	@rm -f  $(basename $(@)).db.d  $(basename $(@)).db
+	@$(MSI) -D $(USR_DBFLAGS) -o $(basename $(@)).db -S $@  > $(basename $(@)).db.d
+	@$(MSI)    $(USR_DBFLAGS) -o $(basename $(@)).db -S $@
+
+$(TEMS): 
+	@printf "Inflating database ... %44s >>> %40s \n" "$@" "$(basename $(@)).db"
+	@rm -f  $(basename $(@)).db.d  $(basename $(@)).db
+	@$(MSI) -D $(USR_DBFLAGS) -o $(basename $(@)).db $@  > $(basename $(@)).db.d
+	@$(MSI)    $(USR_DBFLAGS) -o $(basename $(@)).db $@
+
+
+
+.PHONY: db $(SUBS) $(TEMS) 
