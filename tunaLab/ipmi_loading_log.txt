@@ -1,0 +1,601 @@
+#
+# Start at "2017-W50-Dec11-1413-36-CET"
+#
+# Version information:
+# European Spallation Source ERIC : iocsh.bash (v0.2-9d66ded.PID-2513)
+## can you see this?
+#
+# HOSTDISPLAY=""
+# WINDOWID=""
+# PWD="/home/icssev/ics_gitsrc/e3/e3-ipmiComm/tunaLab"
+# USER="icssev"
+# LOGNAME="icssev"
+# EPICS_HOST_ARCH="linux-x86_64"
+# EPICS_BASE="/epics/bases/base-3.15.5"
+# EPICS_LOCATION="/epics/bases"
+# EPICS="/epics/bases"
+# EPICS_MODULES="/epics/modules"
+# REQUIRE="require"
+# REQUIRE_VERSION="2.5.4"
+# REQUIRE_BIN="/epics/modules/require/2.5.4/bin"
+# REQUIRE_LIB="/epics/modules/require/2.5.4/R3.15.5/lib"
+# REQUIRE_DBD="/epics/modules/require/2.5.4/R3.15.5/dbd"
+# EPICS_CA_AUTO_ADDR_LIST="yes"
+# EPICS_CA_ADDR_LIST=""
+# PATH="/epics/modules/require/2.5.4/bin:/epics/bases/base-3.15.5/bin/linux-x86_64:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin:/home/icssev/bin:/opt/etherlab/bin:/opt/etherlab/sbin"
+# LD_LIBRARY_PATH="/epics/bases/base-3.15.5/lib/linux-x86_64:/epics/modules/require/2.5.4/R3.15.5/lib/linux-x86_64:/usr/local/lib:/home/icssev/lib:/opt/etherlab/lib"
+#
+# Please Use Version and other environment variables
+# in order to report or debug this shell
+#
+# Loading the mandatory require module ... 
+# 
+dlload /epics/modules/require/2.5.4/R3.15.5/lib/linux-x86_64/librequire.so
+dbLoadDatabase /epics/modules/require/2.5.4/R3.15.5/dbd/require.dbd
+require_registerRecordDeviceDriver
+Loading module info records for require
+# 
+# 
+< "mch123.cmd"
+require asyn, 4.32.0
+Module asyn version 4.32.0 found in /epics/modules/asyn/4.32.0/
+Loading library /epics/modules/asyn/4.32.0/R3.15.5/lib/linux-x86_64/libasyn.so
+Loaded asyn version 4.32.0
+Loading dbd file /epics/modules/asyn/4.32.0/R3.15.5/dbd/asyn.dbd
+Calling function asyn_registerRecordDeviceDriver
+Loading module info records for asyn
+require ipmiComm, 4.0.2
+Module ipmiComm version 4.0.2 found in /epics/modules/ipmiComm/4.0.2/
+Module ipmiComm depends on asyn 4.32+
+Module asyn version 4.32.0 already loaded
+Loading library /epics/modules/ipmiComm/4.0.2/R3.15.5/lib/linux-x86_64/libipmiComm.so
+Loaded ipmiComm version 4.0.2
+Loading dbd file /epics/modules/ipmiComm/4.0.2/R3.15.5/dbd/ipmiComm.dbd
+Calling function ipmiComm_registerRecordDeviceDriver
+Loading module info records for ipmiComm
+require iocStats, 1856ef5
+Module iocStats version 1856ef5 found in /epics/modules/iocStats/1856ef5/
+Loading library /epics/modules/iocStats/1856ef5/R3.15.5/lib/linux-x86_64/libiocStats.so
+Loaded iocStats version 1856ef5
+Loading dbd file /epics/modules/iocStats/1856ef5/R3.15.5/dbd/iocStats.dbd
+Calling function iocStats_registerRecordDeviceDriver
+Loading module info records for iocStats
+epicsEnvSet("ENGINEER","hanlee x3409")
+epicsEnvSet("LOCATION","Rack 1 at ICS Tuna Lab")
+epicsEnvSet("IOC", "IPMI-TunaLab")
+epicsEnvSet("DEV", "MCH_123")
+# iocStats
+dbLoadRecords("iocAdminSoft.db", "IOC=IPMI-TunaLab:IocStats")
+drvAsynIPPortConfigure ("shm-test","10.4.8.123:623 udp",0,0,0)
+mchInit("shm-test")
+shm-test Connecting...
+Identified shm-test to be N.A.T.. IPMI version 1.5
+mchSdrFullSens: owner 0x20 lun 0 sdr number 189 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string CPU INT Temp
+mchSdrFullSens: owner 0x20 lun 0 sdr number 188 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string CPU AMB Temp
+mchSdrFullSens: owner 0x20 lun 0 sdr number 187 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Ambient Temp
+mchSdrFullSens: owner 0x20 lun 0 sdr number 186 type 0x02, m 58, b 0, rexp -3 bexp 0, is logical entity 0
+string +12V PSU
+mchSdrFullSens: owner 0x20 lun 0 sdr number 185 type 0x02, m 31, b 0, rexp -3 bexp 0, is logical entity 0
+string +5V PSU
+mchSdrFullSens: owner 0x20 lun 0 sdr number 184 type 0x02, m 19, b 0, rexp -3 bexp 0, is logical entity 0
+string +3.3V PSU
+mchSdrFullSens: owner 0x20 lun 0 sdr number 183 type 0x02, m 10, b 0, rexp -3 bexp 0, is logical entity 0
+string +PS 1V05
+mchSdrFullSens: owner 0x20 lun 0 sdr number 182 type 0x02, m 10, b 0, rexp -3 bexp 0, is logical entity 0
+string +PS 1V0
+mchSdrFullSens: owner 0x20 lun 0 sdr number 181 type 0x02, m 10, b 0, rexp -3 bexp 0, is logical entity 0
+string VCC CORE
+mchSdrFullSens: owner 0x20 lun 0 sdr number 180 type 0xf2, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string Ejector Handle
+mchSdrFullSens: owner 0x20 lun 0 sdr number 179 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 016 AMC12
+mchSdrFullSens: owner 0x20 lun 0 sdr number 177 type 0xf2, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string Hot Swap
+mchSdrFullSens: owner 0x20 lun 0 sdr number 176 type 0xf1, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string IPMB Physical
+mchSdrFullSens: owner 0x20 lun 0 sdr number 175 type 0x02, m 143, b -325, rexp -4 bexp -1, is logical entity 0
+string +3.3V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 174 type 0x02, m 55, b -250, rexp -3 bexp -2, is logical entity 0
+string +12V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 173 type 0x02, m 55, b -250, rexp -3 bexp -2, is logical entity 0
+string +12V_1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 172 type 0x01, m 100, b 0, rexp -2 bexp 0, is logical entity 0
+string LM75 Temp
+mchSdrFullSens: owner 0x20 lun 0 sdr number 171 type 0x01, m 100, b 0, rexp -2 bexp 0, is logical entity 0
+string LM75 Temp2
+mchSdrFullSens: owner 0x20 lun 0 sdr number 170 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 169 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 2
+mchSdrFullSens: owner 0x20 lun 0 sdr number 168 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 3
+mchSdrFullSens: owner 0x20 lun 0 sdr number 167 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 4
+mchSdrFullSens: owner 0x20 lun 0 sdr number 166 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 5
+mchSdrFullSens: owner 0x20 lun 0 sdr number 165 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 6
+mchSdrFullSens: owner 0x20 lun 0 sdr number 164 type 0xc0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string Air Filter
+mchSdrFullSens: owner 0x20 lun 0 sdr number 163 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 040 CU1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 161 type 0xf2, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string Hot Swap
+mchSdrFullSens: owner 0x20 lun 0 sdr number 160 type 0xf1, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string IPMB Physical
+mchSdrFullSens: owner 0x20 lun 0 sdr number 159 type 0x02, m 143, b -325, rexp -4 bexp -1, is logical entity 0
+string +3.3V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 158 type 0x02, m 55, b -250, rexp -3 bexp -2, is logical entity 0
+string +12V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 157 type 0x02, m 55, b -250, rexp -3 bexp -2, is logical entity 0
+string +12V_1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 156 type 0x01, m 100, b 0, rexp -2 bexp 0, is logical entity 0
+string LM75 Temp
+mchSdrFullSens: owner 0x20 lun 0 sdr number 155 type 0x01, m 100, b 0, rexp -2 bexp 0, is logical entity 0
+string LM75 Temp2
+mchSdrFullSens: owner 0x20 lun 0 sdr number 154 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 153 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 2
+mchSdrFullSens: owner 0x20 lun 0 sdr number 152 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 3
+mchSdrFullSens: owner 0x20 lun 0 sdr number 151 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 4
+mchSdrFullSens: owner 0x20 lun 0 sdr number 150 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 5
+mchSdrFullSens: owner 0x20 lun 0 sdr number 149 type 0x04, m 60, b 0, rexp 0 bexp 0, is logical entity 0
+string Fan 6
+mchSdrFullSens: owner 0x20 lun 0 sdr number 148 type 0xc0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string Air Filter
+mchSdrFullSens: owner 0x20 lun 0 sdr number 147 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 041 CU2
+mchSdrFullSens: owner 0x20 lun 0 sdr number 144 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string CPU INT Temp
+mchSdrFullSens: owner 0x20 lun 0 sdr number 143 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string CPU AMB Temp
+mchSdrFullSens: owner 0x20 lun 0 sdr number 142 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Ambient Temp
+mchSdrFullSens: owner 0x20 lun 0 sdr number 141 type 0x02, m 58, b 0, rexp -3 bexp 0, is logical entity 0
+string +12V PSU
+mchSdrFullSens: owner 0x20 lun 0 sdr number 140 type 0x02, m 31, b 0, rexp -3 bexp 0, is logical entity 0
+string +5V PSU
+mchSdrFullSens: owner 0x20 lun 0 sdr number 139 type 0x02, m 19, b 0, rexp -3 bexp 0, is logical entity 0
+string +3.3V PSU
+mchSdrFullSens: owner 0x20 lun 0 sdr number 138 type 0x02, m 10, b 0, rexp -3 bexp 0, is logical entity 0
+string +PS 1V05
+mchSdrFullSens: owner 0x20 lun 0 sdr number 137 type 0x02, m 10, b 0, rexp -3 bexp 0, is logical entity 0
+string +PS 1V0
+mchSdrFullSens: owner 0x20 lun 0 sdr number 136 type 0x02, m 10, b 0, rexp -3 bexp 0, is logical entity 0
+string VCC CORE
+mchSdrFullSens: owner 0x20 lun 0 sdr number 135 type 0xf2, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string Ejector Handle
+mchSdrFullSens: owner 0x20 lun 0 sdr number 134 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 005 AMC1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 132 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string PCB top
+mchSdrFullSens: owner 0x20 lun 0 sdr number 131 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string PCB bottom
+mchSdrFullSens: owner 0x20 lun 0 sdr number 130 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string CPU die
+mchSdrFullSens: owner 0x20 lun 0 sdr number 129 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string CPU side
+mchSdrFullSens: owner 0x20 lun 0 sdr number 128 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string VCC_3V3 DC/DC
+mchSdrFullSens: owner 0x20 lun 0 sdr number 127 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string FPGA Core DC/DC
+mchSdrFullSens: owner 0x20 lun 0 sdr number 126 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string CPU Core DC/DC
+mchSdrFullSens: owner 0x20 lun 0 sdr number 125 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string FMC VADJ DC/DC
+mchSdrFullSens: owner 0x20 lun 112 sdr number 124 type 0x02, m 62, b 0, rexp -3 bexp 0, is logical entity 0
+string AMC PP
+mchSdrFullSens: owner 0x20 lun 112 sdr number 123 type 0x02, m 15, b 0, rexp -3 bexp 0, is logical entity 0
+string AMC MP
+mchSdrFullSens: owner 0x20 lun 112 sdr number 122 type 0x02, m 13, b 0, rexp -3 bexp 0, is logical entity 0
+string VAA_1V0
+mchSdrFullSens: owner 0x20 lun 112 sdr number 121 type 0x02, m 13, b 0, rexp -3 bexp 0, is logical entity 0
+string VAA_1V2
+mchSdrFullSens: owner 0x20 lun 112 sdr number 120 type 0x02, m 14, b 0, rexp -3 bexp 0, is logical entity 0
+string VAA_1V35
+mchSdrFullSens: owner 0x20 lun 112 sdr number 119 type 0x02, m 14, b 0, rexp -3 bexp 0, is logical entity 0
+string VAA_1V8
+mchSdrFullSens: owner 0x20 lun 112 sdr number 118 type 0x02, m 13, b 0, rexp -3 bexp 0, is logical entity 0
+string VBB_1V0
+mchSdrFullSens: owner 0x20 lun 0 sdr number 117 type 0x02, m 13, b 0, rexp -3 bexp 0, is logical entity 0
+string VCC_1V0
+mchSdrFullSens: owner 0x20 lun 0 sdr number 116 type 0x02, m 14, b 0, rexp -3 bexp 0, is logical entity 0
+string VCC_1V35
+mchSdrFullSens: owner 0x20 lun 0 sdr number 115 type 0x02, m 14, b 0, rexp -3 bexp 0, is logical entity 0
+string VCC_3V3
+mchSdrFullSens: owner 0x20 lun 0 sdr number 114 type 0x02, m 4, b 0, rexp -3 bexp 0, is logical entity 0
+string FPGA Core
+mchSdrFullSens: owner 0x20 lun 0 sdr number 113 type 0x02, m 5, b 0, rexp -3 bexp 0, is logical entity 0
+string CPU Core
+mchSdrFullSens: owner 0x20 lun 0 sdr number 112 type 0x02, m 8, b 0, rexp -3 bexp 0, is logical entity 0
+string FMC VADJ
+mchSdrFullSens: owner 0x20 lun 112 sdr number 111 type 0x02, m 62, b 0, rexp -3 bexp 0, is logical entity 0
+string RTM PP
+mchSdrFullSens: owner 0x20 lun 112 sdr number 110 type 0x02, m 15, b 0, rexp -3 bexp 0, is logical entity 0
+string RTM MP
+mchSdrFullSens: owner 0x20 lun 0 sdr number 109 type 0x03, m 62, b 0, rexp -3 bexp 0, is logical entity 0
+string AMC PP
+mchSdrFullSens: owner 0x20 lun 0 sdr number 108 type 0x03, m 55, b 0, rexp -3 bexp 0, is logical entity 0
+string VCC 3V3
+mchSdrFullSens: owner 0x20 lun 0 sdr number 107 type 0x03, m 78, b 0, rexp -3 bexp 0, is logical entity 0
+string FPGA Core
+mchSdrFullSens: owner 0x20 lun 0 sdr number 106 type 0x03, m 78, b 0, rexp -3 bexp 0, is logical entity 0
+string CPU Core
+mchSdrFullSens: owner 0x20 lun 0 sdr number 105 type 0x03, m 55, b 0, rexp -3 bexp 0, is logical entity 0
+string FMC VADJ
+mchSdrFullSens: owner 0x20 lun 0 sdr number 104 type 0x03, m 62, b 0, rexp -3 bexp 0, is logical entity 0
+string RTM PP
+mchSdrFullSens: owner 0x20 lun 0 sdr number 103 type 0xf2, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HotSwap
+mchSdrFullSens: owner 0x20 lun 0 sdr number 102 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 011 AMC7
+mchSdrFullSens: owner 0x20 lun 0 sdr number 100 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp CPU
+mchSdrFullSens: owner 0x20 lun 0 sdr number 99 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp I/O
+mchSdrFullSens: owner 0x20 lun 0 sdr number 98 type 0xf2, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HotSwap
+mchSdrFullSens: owner 0x20 lun 0 sdr number 97 type 0x2b, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string Version Change
+mchSdrFullSens: owner 0x20 lun 0 sdr number 96 type 0x02, m 1, b 0, rexp -2 bexp 0, is logical entity 0
+string Base 1.2V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 95 type 0x02, m 1, b 0, rexp -2 bexp 0, is logical entity 0
+string Base 1.5V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 94 type 0x02, m 1, b 0, rexp -2 bexp 0, is logical entity 0
+string Base 1.8V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 93 type 0x02, m 1, b 0, rexp -2 bexp 0, is logical entity 0
+string Base 2.5V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 92 type 0x02, m 16, b 0, rexp -3 bexp 0, is logical entity 0
+string Base 3.3V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 91 type 0x02, m 6, b 0, rexp -2 bexp 0, is logical entity 0
+string Base 12V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 90 type 0x03, m 1, b 0, rexp -2 bexp 0, is logical entity 0
+string Base Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 89 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 003 MCMC1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 87 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T_CPU
+mchSdrFullSens: owner 0x20 lun 0 sdr number 86 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T_XFrm1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 85 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T_XFrm2
+mchSdrFullSens: owner 0x20 lun 0 sdr number 84 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T-PSB
+mchSdrFullSens: owner 0x20 lun 0 sdr number 83 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T-PFC1
+mchSdrFullSens: owner 0x20 lun 0 sdr number 82 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T-REC
+mchSdrFullSens: owner 0x20 lun 0 sdr number 81 type 0x02, m 2, b 0, rexp 0 bexp 0, is logical entity 0
+string VINAC
+mchSdrFullSens: owner 0x20 lun 0 sdr number 80 type 0x02, m 2, b 0, rexp 0 bexp 0, is logical entity 0
+string VINDC
+mchSdrFullSens: owner 0x20 lun 0 sdr number 79 type 0x02, m 1, b 0, rexp -1 bexp 0, is logical entity 0
+string 12V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 78 type 0x02, m 1, b 0, rexp -1 bexp 0, is logical entity 0
+string 3.3V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 77 type 0x03, m 50, b 0, rexp -2 bexp 0, is logical entity 0
+string I_Sum
+mchSdrFullSens: owner 0x20 lun 0 sdr number 76 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH01
+mchSdrFullSens: owner 0x20 lun 0 sdr number 75 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH02
+mchSdrFullSens: owner 0x20 lun 0 sdr number 74 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH03
+mchSdrFullSens: owner 0x20 lun 0 sdr number 73 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH04
+mchSdrFullSens: owner 0x20 lun 0 sdr number 72 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH05
+mchSdrFullSens: owner 0x20 lun 0 sdr number 71 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH06
+mchSdrFullSens: owner 0x20 lun 0 sdr number 70 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH07
+mchSdrFullSens: owner 0x20 lun 0 sdr number 69 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH08
+mchSdrFullSens: owner 0x20 lun 0 sdr number 68 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH09
+mchSdrFullSens: owner 0x20 lun 0 sdr number 67 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH10
+mchSdrFullSens: owner 0x20 lun 0 sdr number 66 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH11
+mchSdrFullSens: owner 0x20 lun 0 sdr number 65 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH12
+mchSdrFullSens: owner 0x20 lun 0 sdr number 64 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH13
+mchSdrFullSens: owner 0x20 lun 0 sdr number 63 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH14
+mchSdrFullSens: owner 0x20 lun 0 sdr number 62 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH15
+mchSdrFullSens: owner 0x20 lun 0 sdr number 61 type 0x03, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string I_CH16
+mchSdrFullSens: owner 0x20 lun 0 sdr number 60 type 0xf2, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HotSwap
+mchSdrFullSens: owner 0x20 lun 0 sdr number 57 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 053 PM4
+mchSdrFullSens: owner 0x20 lun 0 sdr number 51 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp DC/DC
+mchSdrFullSens: owner 0x20 lun 0 sdr number 50 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp DC/DC max
+mchSdrFullSens: owner 0x20 lun 0 sdr number 49 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp Mux
+mchSdrFullSens: owner 0x20 lun 0 sdr number 48 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp Mux max
+mchSdrFullSens: owner 0x20 lun 0 sdr number 47 type 0x02, m 16, b 0, rexp -3 bexp 0, is logical entity 0
+string 3.3V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 46 type 0x02, m 6, b 0, rexp -2 bexp 0, is logical entity 0
+string 12V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 44 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp DC/DC
+mchSdrFullSens: owner 0x20 lun 0 sdr number 43 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp DC/DC max
+mchSdrFullSens: owner 0x20 lun 0 sdr number 42 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp Switch
+mchSdrFullSens: owner 0x20 lun 0 sdr number 41 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp Switch max
+mchSdrFullSens: owner 0x20 lun 0 sdr number 40 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp PCB
+mchSdrFullSens: owner 0x20 lun 0 sdr number 39 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string Temp PCB max
+mchSdrFullSens: owner 0x20 lun 0 sdr number 38 type 0x02, m 1, b 0, rexp -2 bexp 0, is logical entity 0
+string 0.9V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 37 type 0x02, m 1, b 0, rexp -2 bexp 0, is logical entity 0
+string 0.9V analog
+mchSdrFullSens: owner 0x20 lun 0 sdr number 36 type 0x02, m 1, b 0, rexp -2 bexp 0, is logical entity 0
+string 1.8V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 35 type 0x02, m 16, b 0, rexp -3 bexp 0, is logical entity 0
+string 3.3V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 34 type 0x02, m 6, b 0, rexp -2 bexp 0, is logical entity 0
+string 12V
+mchSdrFullSens: owner 0x20 lun 0 sdr number 32 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 000 CM
+mchSdrFullSens: owner 0x20 lun 0 sdr number 30 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T DCDC UPD
+mchSdrFullSens: owner 0x20 lun 0 sdr number 29 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T PATH UPD
+mchSdrFullSens: owner 0x20 lun 0 sdr number 28 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T COOLER UPM
+mchSdrFullSens: owner 0x20 lun 0 sdr number 27 type 0x01, m 1, b 0, rexp 0 bexp 0, is logical entity 0
+string T TRAFO UPM
+mchSdrFullSens: owner 0x20 lun 0 sdr number 26 type 0x02, m 6, b 0, rexp -2 bexp 0, is logical entity 0
+string MP
+mchSdrFullSens: owner 0x20 lun 0 sdr number 25 type 0x02, m 6, b 0, rexp -2 bexp 0, is logical entity 0
+string SMP
+mchSdrFullSens: owner 0x20 lun 0 sdr number 24 type 0x02, m 6, b 0, rexp -2 bexp 0, is logical entity 0
+string SMPP
+mchSdrFullSens: owner 0x20 lun 0 sdr number 23 type 0x02, m 6, b 0, rexp -2 bexp 0, is logical entity 0
+string PP
+mchSdrFullSens: owner 0x20 lun 0 sdr number 22 type 0x02, m 6, b 0, rexp -2 bexp 0, is logical entity 0
+string 12VHH
+mchSdrFullSens: owner 0x20 lun 0 sdr number 21 type 0x03, m 40, b 0, rexp -2 bexp 0, is logical entity 0
+string Current(Sum)
+mchSdrFullSens: owner 0x20 lun 0 sdr number 20 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch01 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 19 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch02 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 18 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch03 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 17 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch04 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 16 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch05 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 15 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch06 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 14 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch07 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 13 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch08 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 12 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch09 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 11 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch10 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 10 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch11 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 9 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch12 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 8 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch13 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 7 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch14 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 6 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch15 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 5 type 0x03, m 5, b 0, rexp -2 bexp 0, is logical entity 0
+string Ch16 Current
+mchSdrFullSens: owner 0x20 lun 0 sdr number 4 type 0xf2, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HotSwap
+mchSdrFullSens: owner 0x20 lun 0 sdr number 1 type 0xf0, m 0, b 0, rexp 0 bexp 0, is logical entity 0
+string HS 051 PM2
+mchSensorFruGetInstance:
+FRU sensor CPU INT Temp 189, type 0x01, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor CPU AMB Temp 188, type 0x01, inst 2, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor Ambient Temp 187, type 0x01, inst 3, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor +12V PSU 186, type 0x02, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor +5V PSU 185, type 0x02, inst 2, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor +3.3V PSU 184, type 0x02, inst 3, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor +PS 1V05 183, type 0x02, inst 4, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor +PS 1V0 182, type 0x02, inst 5, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor VCC CORE 181, type 0x02, inst 6, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 1 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor Ejector Handle 180, type 0xf2, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 2 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor HS 016 AMC12 179, type 0xf0, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x6c, sens owner 0x20, entId 0xc1  entInst 0x6c recType 2 fruId 16 fruLkup 0 fruIndex 0 unavail 0
+FRU sensor Hot Swap 177, type 0xf2, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor IPMB Physical 176, type 0xf1, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor +3.3V 175, type 0x02, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor +12V 174, type 0x02, inst 2, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor +12V_1 173, type 0x02, inst 3, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor LM75 Temp 172, type 0x01, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor LM75 Temp2 171, type 0x01, inst 2, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor Fan 1 170, type 0x04, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor Fan 2 169, type 0x04, inst 2, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor Fan 3 168, type 0x04, inst 3, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor Fan 4 167, type 0x04, inst 4, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor Fan 5 166, type 0x04, inst 5, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor Fan 6 165, type 0x04, inst 6, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor Air Filter 164, type 0xc0, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 1 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor HS 040 CU1 163, type 0xf0, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x61, sens owner 0x20, entId 0x1e  entInst 0x61 recType 2 fruId 40 fruLkup 1 fruIndex 1 unavail 0
+FRU sensor Hot Swap 161, type 0xf2, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor IPMB Physical 160, type 0xf1, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor +3.3V 159, type 0x02, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor +12V 158, type 0x02, inst 2, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor +12V_1 157, type 0x02, inst 3, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor LM75 Temp 156, type 0x01, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor LM75 Temp2 155, type 0x01, inst 2, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor Fan 1 154, type 0x04, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor Fan 2 153, type 0x04, inst 2, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor Fan 3 152, type 0x04, inst 3, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor Fan 4 151, type 0x04, inst 4, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor Fan 5 150, type 0x04, inst 5, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor Fan 6 149, type 0x04, inst 6, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor Air Filter 148, type 0xc0, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 1 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor HS 041 CU2 147, type 0xf0, inst 1, FRU addr 0x20, entId 0x1e, entInst 0x62, sens owner 0x20, entId 0x1e  entInst 0x62 recType 2 fruId 41 fruLkup 2 fruIndex 2 unavail 0
+FRU sensor CPU INT Temp 144, type 0x01, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor CPU AMB Temp 143, type 0x01, inst 2, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor Ambient Temp 142, type 0x01, inst 3, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor +12V PSU 141, type 0x02, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor +5V PSU 140, type 0x02, inst 2, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor +3.3V PSU 139, type 0x02, inst 3, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor +PS 1V05 138, type 0x02, inst 4, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor +PS 1V0 137, type 0x02, inst 5, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor VCC CORE 136, type 0x02, inst 6, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 1 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor Ejector Handle 135, type 0xf2, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 2 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor HS 005 AMC1 134, type 0xf0, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x61, sens owner 0x20, entId 0xc1  entInst 0x61 recType 2 fruId 5 fruLkup 3 fruIndex 3 unavail 0
+FRU sensor PCB top 132, type 0x01, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor PCB bottom 131, type 0x01, inst 2, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor CPU die 130, type 0x01, inst 3, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor CPU side 129, type 0x01, inst 4, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VCC_3V3 DC/DC 128, type 0x01, inst 5, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor FPGA Core DC/DC 127, type 0x01, inst 6, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor CPU Core DC/DC 126, type 0x01, inst 7, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor FMC VADJ DC/DC 125, type 0x01, inst 8, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor AMC PP 124, type 0x02, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor AMC MP 123, type 0x02, inst 2, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VAA_1V0 122, type 0x02, inst 3, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VAA_1V2 121, type 0x02, inst 4, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VAA_1V35 120, type 0x02, inst 5, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VAA_1V8 119, type 0x02, inst 6, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VBB_1V0 118, type 0x02, inst 7, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VCC_1V0 117, type 0x02, inst 8, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VCC_1V35 116, type 0x02, inst 9, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VCC_3V3 115, type 0x02, inst 10, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor FPGA Core 114, type 0x02, inst 11, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor CPU Core 113, type 0x02, inst 12, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor FMC VADJ 112, type 0x02, inst 13, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor RTM PP 111, type 0x02, inst 14, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor RTM MP 110, type 0x02, inst 15, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor AMC PP 109, type 0x03, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor VCC 3V3 108, type 0x03, inst 2, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor FPGA Core 107, type 0x03, inst 3, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor CPU Core 106, type 0x03, inst 4, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor FMC VADJ 105, type 0x03, inst 5, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor RTM PP 104, type 0x03, inst 6, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 1 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor HotSwap 103, type 0xf2, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 2 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor HS 011 AMC7 102, type 0xf0, inst 1, FRU addr 0x20, entId 0xc1, entInst 0x67, sens owner 0x20, entId 0xc1  entInst 0x67 recType 2 fruId 11 fruLkup 4 fruIndex 4 unavail 0
+FRU sensor Temp CPU 100, type 0x01, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Temp I/O 99, type 0x01, inst 2, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor HotSwap 98, type 0xf2, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 2 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Version Change 97, type 0x2b, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 2 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Base 1.2V 96, type 0x02, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Base 1.5V 95, type 0x02, inst 2, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Base 1.8V 94, type 0x02, inst 3, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Base 2.5V 93, type 0x02, inst 4, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Base 3.3V 92, type 0x02, inst 5, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Base 12V 91, type 0x02, inst 6, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor Base Current 90, type 0x03, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 1 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor HS 003 MCMC1 89, type 0xf0, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x61, sens owner 0x20, entId 0xc2  entInst 0x61 recType 2 fruId 3 fruLkup 5 fruIndex 5 unavail 0
+FRU sensor T_CPU 87, type 0x01, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor T_XFrm1 86, type 0x01, inst 2, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor T_XFrm2 85, type 0x01, inst 3, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor T-PSB 84, type 0x01, inst 4, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor T-PFC1 83, type 0x01, inst 5, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor T-REC 82, type 0x01, inst 6, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor VINAC 81, type 0x02, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor VINDC 80, type 0x02, inst 2, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor 12V 79, type 0x02, inst 3, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor 3.3V 78, type 0x02, inst 4, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_Sum 77, type 0x03, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 1 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH01 76, type 0x03, inst 2, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH02 75, type 0x03, inst 3, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH03 74, type 0x03, inst 4, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH04 73, type 0x03, inst 5, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH05 72, type 0x03, inst 6, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH06 71, type 0x03, inst 7, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH07 70, type 0x03, inst 8, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH08 69, type 0x03, inst 9, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH09 68, type 0x03, inst 10, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH10 67, type 0x03, inst 11, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH11 66, type 0x03, inst 12, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH12 65, type 0x03, inst 13, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH13 64, type 0x03, inst 14, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH14 63, type 0x03, inst 15, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH15 62, type 0x03, inst 16, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor I_CH16 61, type 0x03, inst 17, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor HotSwap 60, type 0xf2, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor HS 053 PM4 57, type 0xf0, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x64, sens owner 0x20, entId 0x0a  entInst 0x64 recType 2 fruId 53 fruLkup 6 fruIndex 6 unavail 0
+FRU sensor Temp DC/DC 51, type 0x01, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x63, sens owner 0x20, entId 0xc2  entInst 0x63 recType 1 fruId 60 fruLkup 11 fruIndex 11 unavail 0
+FRU sensor Temp DC/DC max 50, type 0x01, inst 2, FRU addr 0x20, entId 0xc2, entInst 0x63, sens owner 0x20, entId 0xc2  entInst 0x63 recType 1 fruId 60 fruLkup 11 fruIndex 11 unavail 0
+FRU sensor Temp Mux 49, type 0x01, inst 3, FRU addr 0x20, entId 0xc2, entInst 0x63, sens owner 0x20, entId 0xc2  entInst 0x63 recType 1 fruId 60 fruLkup 11 fruIndex 11 unavail 0
+FRU sensor Temp Mux max 48, type 0x01, inst 4, FRU addr 0x20, entId 0xc2, entInst 0x63, sens owner 0x20, entId 0xc2  entInst 0x63 recType 1 fruId 60 fruLkup 11 fruIndex 11 unavail 0
+FRU sensor 3.3V 47, type 0x02, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x63, sens owner 0x20, entId 0xc2  entInst 0x63 recType 1 fruId 60 fruLkup 11 fruIndex 11 unavail 0
+FRU sensor 12V 46, type 0x02, inst 2, FRU addr 0x20, entId 0xc2, entInst 0x63, sens owner 0x20, entId 0xc2  entInst 0x63 recType 1 fruId 60 fruLkup 11 fruIndex 11 unavail 0
+FRU sensor Temp DC/DC 44, type 0x01, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor Temp DC/DC max 43, type 0x01, inst 2, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor Temp Switch 42, type 0x01, inst 3, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor Temp Switch max 41, type 0x01, inst 4, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor Temp PCB 40, type 0x01, inst 5, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor Temp PCB max 39, type 0x01, inst 6, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor 0.9V 38, type 0x02, inst 1, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor 0.9V analog 37, type 0x02, inst 2, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor 1.8V 36, type 0x02, inst 3, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor 3.3V 35, type 0x02, inst 4, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor 12V 34, type 0x02, inst 5, FRU addr 0x20, entId 0xc2, entInst 0x64, sens owner 0x20, entId 0xc2  entInst 0x64 recType 1 fruId 61 fruLkup 12 fruIndex 12 unavail 0
+FRU sensor HS 000 CM 32, type 0xf0, inst 0, FRU addr 0x20, entId 0xc2, entInst 0x66, sens owner 0x20, entId 0xc2  entInst 0x66 recType 2 fruId 0 fruLkup 13 fruIndex 13 unavail 0
+FRU sensor T DCDC UPD 30, type 0x01, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor T PATH UPD 29, type 0x01, inst 2, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor T COOLER UPM 28, type 0x01, inst 3, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor T TRAFO UPM 27, type 0x01, inst 4, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor MP 26, type 0x02, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor SMP 25, type 0x02, inst 2, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor SMPP 24, type 0x02, inst 3, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor PP 23, type 0x02, inst 4, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor 12VHH 22, type 0x02, inst 5, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Current(Sum) 21, type 0x03, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch01 Current 20, type 0x03, inst 2, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch02 Current 19, type 0x03, inst 3, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch03 Current 18, type 0x03, inst 4, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch04 Current 17, type 0x03, inst 5, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch05 Current 16, type 0x03, inst 6, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch06 Current 15, type 0x03, inst 7, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch07 Current 14, type 0x03, inst 8, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch08 Current 13, type 0x03, inst 9, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch09 Current 12, type 0x03, inst 10, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch10 Current 11, type 0x03, inst 11, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch11 Current 10, type 0x03, inst 12, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch12 Current 9, type 0x03, inst 13, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch13 Current 8, type 0x03, inst 14, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch14 Current 7, type 0x03, inst 15, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch15 Current 6, type 0x03, inst 16, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor Ch16 Current 5, type 0x03, inst 17, FRU addr 0x20, eStarting iocInit
+require: record IPMI-TunaLab:MODULES not found
+require: record IPMI-TunaLab:VERSIONS not found
+require: record IPMI-TunaLab:MOD_VER not found
+iocRun: All initialization complete
+ntId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 1 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor HotSwap 4, type 0xf2, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 2 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+FRU sensor HS 051 PM2 1, type 0xf0, inst 1, FRU addr 0x20, entId 0x0a, entInst 0x62, sens owner 0x20, entId 0x0a  entInst 0x62 recType 2 fruId 51 fruLkup 14 fruIndex 14 unavail 0
+#dbLoadRecords("shelf_microtca_12slot.substitutions","dev=MCH:TEST,link=shm-test2,location=")
+iocInit()
+############################################################################
+## EPICS R3.15.5-EEE-3.15.5-patch
+## EPICS Base built Dec 11 2017
+############################################################################
+dbl > "IPMI-TunaLab_PVs.list"
+epicsEnvSet IOCSH_PS1 "9d66ded.icslab-ser04.2526 > "
+epicsEnvShow T_A
+T_A=linux-x86_64
+epicsEnvShow EPICS_HOST_ARCH
+EPICS_HOST_ARCH=linux-x86_64
+9d66ded.icslab-ser04.2526 > [?1034h
