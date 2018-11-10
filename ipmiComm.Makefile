@@ -43,7 +43,7 @@ APP:=.
 APPDB:=$(APP)/Db
 APPSRC:=$(APP)/src
 
-USR_INCLUDES += -I$(where_am_I)/$(APPSRC)
+USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 
 
 # Even if we convert template and substitutions files to db,
