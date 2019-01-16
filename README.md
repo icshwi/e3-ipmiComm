@@ -16,9 +16,8 @@ We removed the alias, and simplify substitutions files. They are located in [tem
 bash tools/remove_alias.bash 
 ```
 
-
-
 [ESS Specific DB Files](template/README.md)
+
 
 ## MCH access
 
