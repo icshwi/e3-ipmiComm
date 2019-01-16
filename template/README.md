@@ -50,9 +50,6 @@ Note that **-ess.substitutions** instead of **_ess.substitutions**.
   - fru_cu_ess.db
   - fru_pn_ess.db
 
-```
-
-
 # Identify correct sensor info
 
 
