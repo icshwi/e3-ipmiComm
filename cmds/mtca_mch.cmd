@@ -17,9 +17,9 @@ epicsEnvSet("IOCNAME", "$(SESSION)")
 
 iocshLoad("$(TOP)/iocsh/natmch.iocsh", "SESS=$(SESSION),INET=$(IPMISERVER)")
 
-#dbLoadRecords("mtch9u-ess.db", "dev=$(SESSION):IPMI-TEST,link=$(SESSION),location=$(LOCATION)")
+dbLoadRecords("mtca9u-ess.db", "dev=$(SESSION)-IPMI:SUB-SEC,link=$(SESSION),location=$(LOCATION)")
 
-dbLoadTemplate("$(TOP)/template/mtch9u-ess.substitutions", "dev=$(SESSION):IPMI-TEST,link=$(SESSION),location=$(LOCATION)")
+#dbLoadTemplate("$(TOP)/template/mtca9u-ess.substitutions", "dev=$(SESSION):IPMI-TEST,link=$(SESSION),location=$(LOCATION)")
 
 #loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
 #loadIocsh("recsync.iocsh",  "IOCNAME=$(IOCNAME)")

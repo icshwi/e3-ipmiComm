@@ -1,0 +1,68 @@
+#
+# Shroff HUB Sensor PV
+# nat> show_sensorinfo 61 
+# Sensor Information for FRU 61 / HUB1
+# ==================================================================
+#   #   SDRType  Sensor Entity Inst  Value   State    Name
+# ------------------------------------------------------------------
+#   -   MDevLoc          0xc2  0x64                    MCH-PCIe
+#   1   Full     Temp    0xc2  0x64  33 C       ok     Temp DC/DC
+#   2   Full     Temp    0xc2  0x64  37 C       ok     Temp DC/DC max
+#   3   Full     Temp    0xc2  0x64  52 C       ok     Temp Switch
+#   4   Full     Temp    0xc2  0x64  56 C       ok     Temp Switch max
+#   5   Full     Temp    0xc2  0x64  34 C       ok     Temp PCB
+#   6   Full     Temp    0xc2  0x64  30 C       ok     Temp PCB max
+#   7   Full     Voltage 0xc2  0x64  0.91 V     ok     0.9V
+#   8   Full     Voltage 0xc2  0x64  0.90 V     ok     0.9V analog
+#   9   Full     Voltage 0xc2  0x64  1.80 V     ok     1.8V
+#  10   Full     Voltage 0xc2  0x64  3.392 V    ok     3.3V
+#  11   Full     Voltage 0xc2  0x64  12.30 V    ok     12V
+# ------------------------------------------------------------------
+
+
+global {dev=$(dev), id=HUB, unit=$(unit), fruid=$(fruid), prefix=$(id)$(unit)}
+
+file "sensor_ai_ess.template"
+{
+   pattern { attr	, sensinst	, type	}
+           { TEMP	, 1		, 1	}
+           { TEMP	, 2		, 1	}
+	   { TEMP	, 3		, 1	}
+           { TEMP	, 4		, 1	}
+	   { TEMP	, 5		, 1	}
+           { TEMP	, 6		, 1	}
+           { V		, 1		, 2	}
+           { V		, 2		, 2	}
+           { V		, 3		, 2	}
+           { V		, 4		, 2	}
+           { V		, 5		, 2	}
+}			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

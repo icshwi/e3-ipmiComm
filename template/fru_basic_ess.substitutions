@@ -1,6 +1,53 @@
 #
 # Standard FRU PV subset
 #
+# nat> show_sensorinfo 5
+# Sensor Information for FRU 5 / AMC1
+# ==================================================================
+#   #   SDRType  Sensor Entity Inst  Value   State    Name
+# ------------------------------------------------------------------
+#   -   MDevLoc          0xc1  0x61                    CCT AM 900/412
+#     - unknown SDR=0x13
+#     - unknown SDR=0x13  2   Full     Temp    0xc1  0x61  39 C       ok     CPU INT Temp
+#   3   Full     Temp    0xc1  0x61  40 C       ok     CPU AMB Temp
+#   4   Full     Temp    0xc1  0x61  39 C       ok     Ambient Temp
+#   5   Full     Voltage 0xc1  0x61  12.354 V   ok     +12V PSU
+#   6   Full     Voltage 0xc1  0x61  5.146 V    ok     +5V PSU
+#   7   Full     Voltage 0xc1  0x61  3.249 V    ok     +3.3V PSU
+#   8   Full     Voltage 0xc1  0x61  1.090 V    ok     +PS 1V05
+#   9   Full     Voltage 0xc1  0x61  1.010 V    ok     +PS 1V0
+#  10   Full     Voltage 0xc1  0x61  0.660 V    ok     VCC CORE
+#  11   Compact  0xf2    0xc1  0x61  0x01              Ejector Handle
+#  12   Compact  0xf0    0xc1  0x61  0x10              HS 005 AMC1
+# ------------------------------------------------------------------
+
+# nat> show_sensorinfo 13
+# Sensor Information for FRU 13 / AMC9
+# ==================================================================
+#   #   SDRType  Sensor Entity Inst  Value   State    Name
+# ------------------------------------------------------------------
+#   -   MDevLoc          0xc1  0x69                    SIS8300KU AMC
+#   0   Compact  0x0b    0xc1  0x69  0x00              0x00  001EC0FCAE4E
+#   1   Full     0xf2    0xc1  0x69  0x02              Hot Swap
+#   2   Full     Voltage 0xc1  0x69  0.000 V    ok     12V PP
+#   3   Full     Voltage 0xc1  0x69  3.213 V    ok     3.3V MP
+#   4   Full     Voltage 0xc1  0x69  0.000 V    ok     0.95V CORE
+#   5   Full     Voltage 0xc1  0x69  0.065 V    ok     2.5V
+#   6   Full     Voltage 0xc1  0x69  0.000 V    ok     1.8V
+#   7   Full     Voltage 0xc1  0x69  0.000 V    ok     1.2V DDR4
+#   8   Full     Current 0xc1  0x69  0.00 A     ok     RTM PP Current
+#   9   Full     Current 0xc1  0x69  0.0000 A   ok     RTM MP Current
+#  10   Full     Temp    0xc1  0x69  27.0 C     ok     Inlet
+#  11   Full     Temp    0xc1  0x69  27.0 C     ok     Outlet
+#  12   Full     Temp    0xc1  0x69  27.5 C     ok     Middle
+#  13   Full     Temp    0xc1  0x69  26.0 C     ok     FPGA PCB
+#  14   Full     Temp    0xc1  0x69  28.0 C     ok     FPGA DIE
+#  15   Compact  0x0b    0xc1  0x69  0x01              0x00  FPGA Done
+#  16   Compact  0x0b    0xc1  0x69  0x01              0x00  FPGA Init
+#  17   Compact  0x0b    0xc1  0x69  0x00              0x00  RTM OC Fault
+#  18   Compact  0xf0    0xc1  0x69  0x02              HS 013 AMC9
+# ------------------------------------------------------------------
+
 
 global {dev=$(dev), id=$(id), unit=$(unit), fruid=$(fruid), prefix=$(id)$(unit)}
 
@@ -9,6 +56,10 @@ file "fru_common_ess.template"
 pattern {} {}
 }
 
+
+# CPU, Struck, and others have their own sensor configuration
+# We have to customize db for each AMC card
+# 
 file "sensor_ai_ess.template"
 {
    pattern { attr	, sensinst	, type	}

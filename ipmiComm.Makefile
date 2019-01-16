@@ -18,8 +18,8 @@
 # 
 # Author  : Jeong Han Lee
 # email   : han.lee@esss.se
-# Date    : Tuesday, January 15 22:58:47 CET 2019
-# version : 0.0.2
+# Date    : Wednesday, January 16 11:35:46 CET 2019
+# version : 0.0.3
 
 ## The following lines are mandatory, please don't change them.
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
@@ -68,10 +68,11 @@ SOURCES   += $(APPSRC)/drvMchServerPc.c
 SOURCES   += $(APPSRC)/subIpmiComm.c
 
 SCRIPTS += $(wildcard ../iocsh/*.iocsh)
-#
 
+# Order is matter
 SUBS += $(APPDB)/fru_basic_ess.substitutions
 SUBS += $(APPDB)/fru_extended_ess.substitutions
+SUBS += $(wildcard $(APPDB)/sensor_*_ess.substitutions)
 SUBS += $(APPDB)/fru_pm_ess.substitutions
 SUBS += $(APPDB)/fru_cu_ess.substitutions
 SUBS += $(wildcard $(APPDB)/*-ess.substitutions)
@@ -80,8 +81,6 @@ SUBS += $(wildcard $(APPDB)/*-ess.substitutions)
 USR_DBFLAGS += -I . -I ..
 USR_DBFLAGS += -I $(EPICS_BASE)/db
 USR_DBFLAGS += -I $(APPDB)
-
-
 
 
 db: $(SUBS) $(TMPS)
@@ -102,6 +101,7 @@ $(TMPS):
 .PHONY: db $(SUBS) $(TMPS)
 
 #
-.PHONY: vlibs
 vlibs:
+.PHONY: vlibs
+
 #
