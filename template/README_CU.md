@@ -4,7 +4,7 @@ ESS MTCA Cooling Unit (CU)
 ## Type 1 : Schroff uTCA CU for 9U MTCA Crate
 
 * https://schroff.nvent.com/en/schroff/microtca/11850-026-1
-
+* https://schroff.nvent.com/wcsstore/ExtendedSitesCatalogAssetStore/Attachment/SchroffAttachments/Documents/63972-328.pdf
 ```
 # Sensor Information for FRU 41 / CU2
 # ==================================================================
@@ -31,14 +31,14 @@ ESS MTCA Cooling Unit (CU)
 
 * cu_type1_ess.substitutions
 
-* If a fan fails or the connection to the MCH is lost, the EMMC increases the fan speed to the maximum
+* If a fan fails or the connection to the MCH is lost, the EMMC increases the fan speed to the maximum.
 
 * Top View of CU
 
 ```
  Real
 -------
-|4 5 6|   RTM Section
+|6 5 4|   RTM Section
 |3 2 1|   AMC Section
 -------
  Front

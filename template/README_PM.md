@@ -5,6 +5,7 @@ ESS MTCA Power Module (PM)
 * http://www.wiener-d.com/sc/power-supplies/mtca-ps/mtca-4.0.html
 * http://file.wiener-d.com/documentation/MTCA.4/MTCA4_V14.pdf
 
+
 ```
 nat> show_sensorinfo 51
 Sensor Information for FRU 51 / PM2
@@ -46,6 +47,8 @@ Sensor Information for FRU 51 / PM2
 ```
 
 * pm_type1_ess.substitutions
+* In the factory default FRU PM2 of the Shroff MTCA 9U crate is defined as primary Power Module, 
+* PM4 is the secondary (backup)Power Module.
 
 
 ## Type 2 : NAT-PM-AC600D
