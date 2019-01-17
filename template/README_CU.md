@@ -3,6 +3,8 @@ ESS MTCA Cooling Unit (CU)
 
 ## Type 1 : Schroff uTCA CU for 9U MTCA Crate
 
+* https://schroff.nvent.com/en/schroff/microtca/11850-026-1
+
 ```
 # Sensor Information for FRU 41 / CU2
 # ==================================================================
@@ -22,13 +24,39 @@ ESS MTCA Cooling Unit (CU)
 #  10   Full     Fan     0x1e  0x62  1980 RPM   ok     Fan 4
 #  11   Full     Fan     0x1e  0x62  1920 RPM   ok     Fan 5
 #  12   Full     Fan     0x1e  0x62  1920 RPM   ok     Fan 6
-#  13   Full     0xc0    0x1e  0x62  0x00                  0x02  Air Filter
+#  13   Full     0xc0    0x1e  0x62  0x00              0x02  Air Filter
 #  14   Compact  0xf0    0x1e  0x62  0x10              HS 041 CU2
 # ------------------------------------------------------------------
 ```
 
 * cu_type1_ess.substitutions
 
+* If a fan fails or the connection to the MCH is lost, the EMMC increases the fan speed to the maximum
+
+* Top View of CU
+
+```
+ Real
+-------
+|4 5 6|   RTM Section
+|3 2 1|   AMC Section
+-------
+ Front
+```
+* Front View of Shroff MTCA 9U Crate
+```
+   TOP
+----------
+|  CU1   |   FRU 40
+----------
+|        |
+|  AMCs  |
+|        |
+----------
+|  CU2   |   FRU 41
+----------
+  Bottom
+```
 
 ## Type 2 : Schroff uTCA CU for 3U MTCA Crate
 ```
@@ -49,7 +77,7 @@ Sensor Information for FRU 40 / CU1
   8   Full     Fan     0x1e  0x61  9720 RPM   ok     Fan 2
   9   Full     Fan     0x1e  0x61  12240 RPM  ok     Fan 3
  10   Full     Fan     0x1e  0x61  9720 RPM   ok     Fan 4
- 11   Full     0xc0    0x1e  0x61  0x00                  0x02  Air Filter
+ 11   Full     0xc0    0x1e  0x61  0x00              0x02  Air Filter
  12   Compact  0xf0    0x1e  0x61  0x10              HS 040 CU1
 ------------------------------------------------------------------
 ```

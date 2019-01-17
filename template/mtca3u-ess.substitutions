@@ -63,21 +63,13 @@ file "sensor_hub_ess.db"
 }
 
 
-
-#IPMB-0 Addresses
-file "fru_pm_ess.db"
+file "pm_type2_ess.db"
 {
    pattern { unit	, fruid }
-           { 1    	, 50	}
-           { 2  	, 51	}
-           { 3  	, 52	}
-           { 4  	, 53	}
+           { 1_  	, 50	}
 }
 
 
-
-
-# IPMB-0 Addresses
 file "cu_type2_ess.db"
 {
    pattern { unit	, fruid	}

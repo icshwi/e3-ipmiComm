@@ -17,7 +17,7 @@
 #   8   Full     Fan     0x1e  0x61  9720 RPM   ok     Fan 2
 #   9   Full     Fan     0x1e  0x61  12240 RPM  ok     Fan 3
 #  10   Full     Fan     0x1e  0x61  9720 RPM   ok     Fan 4
-#  11   Full     0xc0    0x1e  0x61  0x00                  0x02  Air Filter
+#  11   Full     0xc0    0x1e  0x61  0x00              0x02  Air Filter
 #  12   Compact  0xf0    0x1e  0x61  0x10              HS 040 CU1
 # ------------------------------------------------------------------
 

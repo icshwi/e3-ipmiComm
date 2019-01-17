@@ -2,6 +2,8 @@ ESS MTCA Power Module (PM)
 =======
 
 ## Type 1 : PM-AC1000 (Wiener AC1000)
+* http://www.wiener-d.com/sc/power-supplies/mtca-ps/mtca-4.0.html
+* http://file.wiener-d.com/documentation/MTCA.4/MTCA4_V14.pdf
 
 ```
 nat> show_sensorinfo 51
@@ -47,6 +49,9 @@ Sensor Information for FRU 51 / PM2
 
 
 ## Type 2 : NAT-PM-AC600D
+* https://www.nateurope.com/products/NAT-PM-AC600D.html
+* https://www.nateurope.com/data_sheets/nat_pm_ac600d_ds.pdf
+
 ```
 nat> show_sensorinfo 50
 Sensor Information for FRU 50 / PM1

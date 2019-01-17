@@ -94,13 +94,10 @@ file "cu_type1_ess.db"
 
 #IPMB-0 Addresses
 #Wiener PM
-file "wiener_pm_ess.db"
+file "pm_type1_ess.db"
 {
    pattern { unit	, fruid }
-#           { 1    	, 50	}
-           { 1  	, 51	}
-#           { 3  	, 52	}
-#           { 4  	, 53	}
+           { 1_  	, 51	}
 }
 
 
