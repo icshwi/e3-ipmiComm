@@ -32,7 +32,6 @@ file "fru_common_ess.template"
            { SH		, 2  	, 2	}
            { CM		, 1  	, 253	}
            { SHM	, 1  	, 254	}
-#           { BP	, 1  	, 164	}
 }
 
 file "fru_basic_ess.db"
@@ -83,11 +82,11 @@ file "sensor_hub_ess.db"
 }
 
 # IPMB-0 Addresses
-file "fru_cu_ess.db"
+file "cu_type1_ess.db"
 {
    pattern { unit	, fruid	}
-           { 1  	, 40	}
-           { 2  	, 41	}
+           { 1_  	, 40	}
+           { 2_  	, 41	}
 }
 
 
