@@ -1,5 +1,7 @@
 #
-# Default Power Module FRU and sensor PVs
+# Type 1 : Power Module Wiener AC1000
+#          This is the standard ESS PM for 9U MTCA crate
+#
 #
 # nat> show_sensorinfo 51
 # Sensor Information for FRU 51 / PM2

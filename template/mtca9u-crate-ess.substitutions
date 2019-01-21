@@ -1,0 +1,78 @@
+#
+# Schroff MTCA 12 slots with the standard PM
+#
+
+global {dev=$(dev), link=$(link), location=$(location)}
+
+file "system_common_ess.template"
+{
+   pattern {} {} 
+}
+
+file "system_powerstate_unsupported_ess.template"
+{
+   pattern {} {} 
+}
+
+
+# file "fru_basic_ess.db"
+# {
+#    pattern { id		, unit	, fruid }
+#            { AMC	, 1  	, 5	}
+#            { AMC	, 2  	, 6	}
+#            { AMC	, 3  	, 7	}
+#            { AMC	, 4  	, 8	}
+#            { AMC	, 5  	, 9	}
+#            { AMC	, 6  	, 10	}
+#            { AMC	, 7  	, 11	}
+#            { AMC	, 8  	, 12	}
+#            { AMC	, 9  	, 13	}
+#            { AMC	, 10  	, 14	}
+#            { AMC	, 11  	, 15	}
+#            { AMC	, 12  	, 16	}
+# #           { RTM	, 1  	, 90	}
+# #           { RTM	, 2  	, 91	}
+# #           { RTM	, 3  	, 92	}
+# #           { RTM	, 4  	, 93	}
+# #           { RTM	, 5  	, 94	}
+# #           { RTM	, 6  	, 95	}
+# #           { RTM	, 7  	, 96	}
+# #           { RTM	, 8  	, 97	}
+# #           { RTM	, 9  	, 98	}
+# #           { RTM	, 10  	, 99	}
+# #           { RTM	, 11 	, 100	}
+# #           { RTM	, 12  	, 101	}
+# }
+
+# file "cpu_type1_ess.db"
+# file "mtca_evr300u_ess.db"
+
+
+file "mch_type1_ess.db"
+{
+   pattern { unit }
+           { 1_   }
+}
+
+
+file "pm_type1_ess.db"
+{
+   pattern { unit	, fruid }
+           { 1_  	, 51	}
+}
+
+
+file "cu_type1_ess.db"
+{
+   pattern { unit	, fruid	}
+           { 1_  	, 40	}
+           { 2_  	, 41	}
+}
+
+
+file "others_type1_ess.db"
+{
+  pattern {} {}
+}
+
+

@@ -1,5 +1,3 @@
-# Aliases are temporary for backward-compatibility
-
 # FRU 'presence' record to indicate whether FRU
 # is active; used by edm visibility rules
 record(bi, "$(dev):$(id)$(unit)P") {

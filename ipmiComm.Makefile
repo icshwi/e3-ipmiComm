@@ -72,7 +72,8 @@ SCRIPTS += $(wildcard ../iocsh/*.iocsh)
 # Order is matter
 SUBS += $(APPDB)/fru_basic_ess.substitutions
 SUBS += $(APPDB)/fru_extended_ess.substitutions
-SUBS += $(wildcard $(APPDB)/sensor_*_ess.substitutions)
+SUBS += $(wildcard $(APPDB)/others_*_ess.substitutions)
+SUBS += $(wildcard $(APPDB)/mch_*_ess.substitutions)
 SUBS += $(wildcard $(APPDB)/cu_*_ess.substitutions)
 SUBS += $(wildcard $(APPDB)/pm_*_ess.substitutions)
 SUBS += $(wildcard $(APPDB)/*-ess.substitutions)
