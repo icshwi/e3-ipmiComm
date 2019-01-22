@@ -1,6 +1,8 @@
 #
 # TYPE2 : PM NAT-PM-AC600D
 #
+# Manufacturer(11)         : N.A.T. GmbH
+# Board Name(13)           : NAT-PM-AC600D
 # nat> show_sensorinfo 50
 # Sensor Information for FRU 50 / PM1
 # ==================================================================
@@ -38,8 +40,6 @@
 #  30   Event       -    0x0a  0x00                    PM_Stat
 #  29   Compact  0xf0    0x0a  0x61  0x10              HS 050 PM1
 # ------------------------------------------------------------------
-
-
 
 
 

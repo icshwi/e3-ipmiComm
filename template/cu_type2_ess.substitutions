@@ -1,6 +1,11 @@
 #
 # CU TYPE2 : Schroff uTCA CU for 3U MTCA Crate
 #
+# Manufacturer(12)         : Schroff GmbH
+# Board Name(12)           : uTCA Cooling
+# Manufacturer(12)         : Schroff GmbH
+# Product Name(17)         : uTCA Cooling Unit
+
 # Sensor Information for FRU 40 / CU1
 # ==================================================================
 #   #   SDRType  Sensor Entity Inst  Value   State    Name
@@ -28,22 +33,22 @@ global {dev=$(dev), id=CU, unit=$(unit), fruid=$(fruid), prefix=$(id)$(unit)}
 
 file "fru_cu_common_ess.template"
 {
-pattern {} {}
+   pattern {} {}
 }
 
 file "fru_common_ess.template"
 {
-pattern {} {}
+   pattern {} {}
 }
 
 file "sensor_ai_ess.template"
 {
    pattern { attr       , sensinst	, type	}
-           { LM75TEMP1_	, 1		, 1	}
-           { LM75TEMP2_	, 2		, 1	}
            { 3d3V_	, 1		, 2	}
            { 12V_	, 2		, 2	}
            { 12V_	, 3		, 2	}
+           { LM75TEMP1_	, 1		, 1	}
+           { LM75TEMP2_	, 2		, 1	}
 	   { FAN1_	, 1		, 4	}
            { FAN2_	, 2		, 4	}
            { FAN3_	, 3		, 4	}

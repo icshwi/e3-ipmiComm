@@ -11,13 +11,15 @@ epicsEnvSet "TOP" "$(E3_CMD_TOP)/.."
 epicsEnvSet("ENGINEER","hanlee x3409")
 epicsEnvSet("LOCATION","Rack 1 at ICS Tuna Lab")
 
-epicsEnvSet("SESSION", "nat-mch3u")
-epicsEnvSet("IPMISERVER", "10.4.8.126")
+epicsEnvSet("SESSION", "MTCA9U")
+epicsEnvSet("IPMISERVER", "10.4.8.123")
 epicsEnvSet("IOCNAME", "$(SESSION)")
 
 iocshLoad("$(TOP)/iocsh/natmch.iocsh", "SESS=$(SESSION),INET=$(IPMISERVER)")
 
-dbLoadRecords("mtca3u-ess.db", "dev=$(SESSION)-IPMI:SUB-SEC,link=$(SESSION),location=$(LOCATION)")
+dbLoadRecords("mtca9u-crate-ess.db", "dev=$(SESSION)-IPMI:SUB-SEC,link=$(SESSION),location=$(LOCATION)")
+
+#dbLoadTemplate("$(TOP)/template/mtca9u-ess.substitutions", "dev=$(SESSION):IPMI-TEST,link=$(SESSION),location=$(LOCATION)")
 
 #loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
 #loadIocsh("recsync.iocsh",  "IOCNAME=$(IOCNAME)")

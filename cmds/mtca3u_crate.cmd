@@ -11,13 +11,11 @@ epicsEnvSet "TOP" "$(E3_CMD_TOP)/.."
 epicsEnvSet("ENGINEER","hanlee x3409")
 epicsEnvSet("LOCATION","Rack 1 at ICS Tuna Lab")
 
-## SESSION name must be lowercase
-epicsEnvSet("SESSION", "mtca9u")
-epicsEnvSet("IPMISERVER", "10.4.8.123")
+epicsEnvSet("SESSION", "mtca3u")
+epicsEnvSet("IPMISERVER", "10.4.8.126")
 epicsEnvSet("IOCNAME", "$(SESSION)")
-epicsEnvSet("PREFIX", "$(SESSION)-IPMI:SUB-SEC")
 
-iocshLoad("$(ipmiComm_DIR)/mtca9u_std.iocsh", "SESS=$(SESSION),INET=$(IPMISERVER),PREF=$(PREFIX),LOCT=$(LOCATION)")
+iocshLoad("$(ipmiComm_DIR)/mtca3u_std.iocsh", "SESS=$(SESSION),INET=$(IPMISERVER),P=$(SESSION)-IPMI:SUB-SEC,LOCT=$(LOCATION)")
 
 #loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
 #loadIocsh("recsync.iocsh",  "IOCNAME=$(IOCNAME)")

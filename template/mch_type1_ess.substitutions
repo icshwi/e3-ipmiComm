@@ -1,7 +1,23 @@
 #
 # Type 1 : MCH  
-#          This is the standard ESS MCH for 9U MTCA crate
+#          This is the standard ESS MCH for 9U/3U MTCA crate
 #
+#
+# MCH (0)
+# Manufacturer(12)         : Schroff GmbH
+# Board Name(37)           : Schroff MicroTCA Backplane horizontal
+# Manufacturer(12)         : Schroff GmbH
+# Product Name(22)         : Schroff MicroTCA Shelf
+# NAT-MCH (3)
+# Manufacturer(21)         : N.A.T. GmbH - Germany
+# Board Name(07)           : NAT-MCH
+# Clock (60)
+# Manufacturer(21)         : N.A.T. GmbH - Germany
+# Product Name(16)         : NAT-MCH-CLK-PHYS
+# HubMod1 (61)
+# Manufacturer(21)         : N.A.T. GmbH - Germany
+# Product Name(15)         : PCIe Hub Module
+
 # show_fru
 #  0   MCH       M4    NMCH-CM
 #  3   mcmc1     M4    NAT-MCH-MCMC
@@ -85,7 +101,7 @@ file "sensor_ai_ess.template"
 {
    pattern { id	    ,  fruid,  attr	, sensinst , type , prefix	 }
    	   { MCH    ,  3    ,  CPUTEMP_	, 1	   , 1	  , $(id)$(unit) }
-           { MCH    ,  3    ,  IOTEPM_ 	, 2	   , 1	  , $(id)$(unit) }
+           { MCH    ,  3    ,  IOTEMP_ 	, 2	   , 1	  , $(id)$(unit) }
 	   { MCH    ,  3    ,  BA1d2V_ 	, 1	   , 2	  , $(id)$(unit) }
    	   { MCH    ,  3    ,  BA1d5V_ 	, 2	   , 2	  , $(id)$(unit) }
 	   { MCH    ,  3    ,  BA1d8V_ 	, 3	   , 2	  , $(id)$(unit) }
@@ -105,17 +121,12 @@ file "sensor_ai_ess.template"
      	   { HUB    , 61    ,  SMAXTEMP_, 4	   , 1	  , $(id)$(unit) }
     	   { HUB    , 61    ,  PTEMP_	, 5	   , 1	  , $(id)$(unit) }
      	   { HUB    , 61    ,  PMAXTEMP_, 6	   , 1	  , $(id)$(unit) }
-	   { HUB    , 61    ,  0d9V_ 	, 1	   , 2	  , $(id)$(unit) }
-   	   { HUB    , 61    ,  0d9AnaV_	, 2	   , 2	  , $(id)$(unit) }
+	   { HUB    , 61    ,  d9V_ 	, 1	   , 2	  , $(id)$(unit) }
+   	   { HUB    , 61    ,  d9AnaV_	, 2	   , 2	  , $(id)$(unit) }
 	   { HUB    , 61    ,  1d8V_ 	, 3	   , 2	  , $(id)$(unit) }
    	   { HUB    , 61    ,  3d3V_ 	, 4	   , 2	  , $(id)$(unit) }
 	   { HUB    , 61    ,  12V_ 	, 5	   , 2	  , $(id)$(unit) }	   
 }			
-			
-			
-			
-			
-			
 			
 			
 			
