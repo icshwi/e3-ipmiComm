@@ -18,8 +18,11 @@ epicsEnvSet("IOCNAME", "$(SESSION)")
 epicsEnvSet("PREFIX", "$(SESSION)-IPMI:SUB-SEC")
 
 iocshLoad("$(ipmiComm_DIR)/mtca9u_std.iocsh", "SESS=$(SESSION),INET=$(IPMISERVER),PREF=$(PREFIX),LOCT=$(LOCATION)")
-iocshLoad("$(ipmiComm_DIR)/ifc14xx.iocsh",    "SESS=$(SESSION),PREF=$(PREFIX),UNIT=1,FRUID=12")
 
+
+# This system has only one ifc1410 board and one struck board
+iocshLoad("$(ipmiComm_DIR)/ifc14xx.iocsh",    "SESS=$(SESSION),PREF=$(PREFIX),UNIT=1,FRUID=12")
+iocshLoad("$(ipmiComm_DIR)/sis8300ku.iocsh",  "SESS=$(SESSION),PREF=$(PREFIX),UNIT=1,FRUID=8")
 
 #loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
 #loadIocsh("recsync.iocsh",  "IOCNAME=$(IOCNAME)")

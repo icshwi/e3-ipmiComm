@@ -10,7 +10,8 @@
 # ------------------------------------------------------------------
 #   -   MDevLoc          0xc1  0x61                    CCT AM 900/412
 #     - unknown SDR=0x13
-#     - unknown SDR=0x13  2   Full     Temp    0xc1  0x61  38 C       ok     CPU INT Temp
+#     - unknown SDR=0x13
+#   2   Full     Temp    0xc1  0x61  38 C       ok     CPU INT Temp
 #   3   Full     Temp    0xc1  0x61  39 C       ok     CPU AMB Temp
 #   4   Full     Temp    0xc1  0x61  37 C       ok     Ambient Temp
 #   5   Full     Voltage 0xc1  0x61  12.354 V   ok     +12V PSU
@@ -32,11 +33,27 @@ file "fru_common_ess.template"
 pattern {} {}
 }
 
+
+# CANNOT access three temperature values, so disable them
+# It should test with the new concurrent CPU
+# file "sensor_ai_ess.template"
+# {
+#    pattern { attr	, sensinst	, type	}
+#            { CPUITEMP_	, 1		, 1	}
+#            { CPUATEMP_	, 2		, 1	}
+#            { AMBITEMP_	, 3		, 1	}
+#            { PSU12V_	, 1		, 2	}
+#            { PSU5V_	, 2		, 2	}
+#            { PSU3d3V_	, 3		, 2	}
+#            { PS1V05V_	, 4		, 2	}
+#            { PS1V0V_	, 5		, 2	}
+# 	   { COREV_	, 6		, 2	}
+  
+#  }		
+			
 file "sensor_ai_ess.template"
 {
    pattern { attr	, sensinst	, type	}
-           { CPU0TEMP_	, 1		, 1	}
-           { AMBITEMP_	, 2		, 1	}
            { PSU12V_	, 1		, 2	}
            { PSU5V_	, 2		, 2	}
            { PSU3d3V_	, 3		, 2	}
@@ -45,7 +62,6 @@ file "sensor_ai_ess.template"
 	   { COREV_	, 6		, 2	}
   
  }		
-			
 			
 			
 			

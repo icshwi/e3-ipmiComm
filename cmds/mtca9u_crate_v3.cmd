@@ -1,8 +1,7 @@
 
 # don't need to require asyn
 require ipmiComm,4.2.0
-
-#require iocStats,ae5d083
+require iocStats,ae5d083
 #require recsync,1.3.0
 #require autosave,5.9.0
 
@@ -18,10 +17,13 @@ epicsEnvSet("IOCNAME", "$(SESSION)")
 epicsEnvSet("PREFIX", "$(SESSION)-IPMI:SUB-SEC")
 
 iocshLoad("$(ipmiComm_DIR)/mtca9u_std.iocsh", "SESS=$(SESSION),INET=$(IPMISERVER),PREF=$(PREFIX),LOCT=$(LOCATION)")
+
+ 
+# This system has only one ifc1410 board and one struck board
 iocshLoad("$(ipmiComm_DIR)/ifc14xx.iocsh",    "SESS=$(SESSION),PREF=$(PREFIX),UNIT=1,FRUID=12")
+iocshLoad("$(ipmiComm_DIR)/sis8300ku.iocsh",  "SESS=$(SESSION),PREF=$(PREFIX),UNIT=1,FRUID=8")
 
-
-#loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
+loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
 #loadIocsh("recsync.iocsh",  "IOCNAME=$(IOCNAME)")
 #loadIocsh("autosave.iocsh", "IOCNAME=autosave, AS_TOP=$(TOP)")
 

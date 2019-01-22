@@ -1,0 +1,14 @@
+#- ###   ESS MTCA IOxOS IFC 14xx iocsh              ###
+#- ####################################################
+#- >> Mandatory
+#- SESS           - SESSION NAME  (MUST BE lowercase)
+#- PREF           - PREFIX for the naming
+#- UNIT           - UNIT
+#- FRUID          - FRUID 
+#- >> Optional
+#- ID             - Default ID, Default : "IFC1410"
+#- ####################################################
+
+dbLoadRecords("ifc1410_ess.db", "_PREF=$(PREF), _SESS=$(SESS), _UNIT=$(UNIT), _FRUID=$(FRUID), _ID=$(ID=IFC1410)")
+#-
+

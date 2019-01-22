@@ -6,7 +6,8 @@
 # * 1 Wiener PM A1000
 # * 1 Concurrent CPU AM 900/412 (AMC1, FRUID 5)
 # * 1 MTCA EVR 300U (AMC2, FRUID 6)
-
+#
+# The total number of PVs : 461
 
 global {dev=$(dev), link=$(link), location=$(location)}
 

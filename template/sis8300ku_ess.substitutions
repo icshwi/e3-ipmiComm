@@ -1,0 +1,80 @@
+#
+# IOxOS IFC 1410 :  Struck Innovative Systeme GmbH, SIS8300KU
+#          This is the standard ESS SIS8300KU
+#
+#
+# nat> show_sensorinfo 8
+# Sensor Information for FRU 8 / AMC4
+# ==================================================================
+#   #   SDRType  Sensor Entity Inst  Value   State    Name
+# ------------------------------------------------------------------
+#   -   MDevLoc          0xc1  0x64                    SIS8300KU AMC
+#   0   Compact  0x0b    0xc1  0x64  0x00              0x00  001EC0FCAE4E
+#   1   Full     0xf2    0xc1  0x64  0x01              Hot Swap
+#   2   Full     Voltage 0xc1  0x64  12.288 V   ok     12V PP
+#   3   Full     Voltage 0xc1  0x64  3.213 V    ok     3.3V MP
+#   4   Full     Voltage 0xc1  0x64  0.945 V    ok     0.95V CORE
+#   5   Full     Voltage 0xc1  0x64  2.496 V    ok     2.5V
+#   6   Full     Voltage 0xc1  0x64  1.791 V    ok     1.8V
+#   7   Full     Voltage 0xc1  0x64  1.192 V    ok     1.2V DDR4
+#   8   Full     Current 0xc1  0x64  0.00 A     ok     RTM PP Current
+#   9   Full     Current 0xc1  0x64  0.0000 A   ok     RTM MP Current
+#  10   Full     Temp    0xc1  0x64  29.0 C     ok     Inlet
+#  11   Full     Temp    0xc1  0x64  43.0 C     ok     Outlet
+#  12   Full     Temp    0xc1  0x64  35.0 C     ok     Middle
+#  13   Full     Temp    0xc1  0x64  33.0 C     ok     FPGA PCB
+#  14   Full     Temp    0xc1  0x64  34.0 C     ok     FPGA DIE
+#  15   Compact  0x0b    0xc1  0x64  0x01              0x00  FPGA Done
+#  16   Compact  0x0b    0xc1  0x64  0x00              0x00  FPGA Init
+#  17   Compact  0x0b    0xc1  0x64  0x00              0x00  RTM OC Fault
+#  18   Compact  0xf0    0xc1  0x64  0x10              HS 008 AMC4
+# ------------------------------------------------------------------
+
+
+
+
+global {dev=$(_PREF), link=$(_SESS), id=$(_ID), fruid=$(_FRUID)}
+
+file "fru_common_ess.template"
+{
+   pattern {  unit    } 
+   	   { $(_UNIT)_  }
+}
+
+file "sensor_ai_ess.template"
+{
+   pattern { attr	, sensinst	, type	, prefix      }
+           { PP12V_	, 1		, 2	, $(_ID)$(_UNIT)_}
+           { PP3d3V_	, 2		, 2	, $(_ID)$(_UNIT)_}
+           { CORd95V_	, 3		, 2	, $(_ID)$(_UNIT)_}
+           { 2d5V_	, 4		, 2	, $(_ID)$(_UNIT)_}
+           { 1d8V_	, 5		, 2	, $(_ID)$(_UNIT)_}
+	   { DDR1d2V_	, 6		, 2	, $(_ID)$(_UNIT)_}
+           { RTMPPI_	, 1		, 3	, $(_ID)$(_UNIT)_}
+           { RTMMPI_	, 2		, 3	, $(_ID)$(_UNIT)_}	   
+           { INLTEMP_	, 1		, 1	, $(_ID)$(_UNIT)_}
+           { OUTTEMP_	, 2		, 1	, $(_ID)$(_UNIT)_}
+           { MIDTEMP_	, 3		, 1	, $(_ID)$(_UNIT)_}
+           { PCBTEMP_	, 4		, 1	, $(_ID)$(_UNIT)_}
+           { DIETEMP_	, 5		, 1	, $(_ID)$(_UNIT)_}	   	   
+
+}		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

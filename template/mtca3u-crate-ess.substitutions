@@ -7,6 +7,7 @@
 # * 1 Concurrent CPU AM 900/412 (AMC2, FRUID 6 )
 # * 1 MTCA EVR 300U (AMC6, FRUID 10)
 #
+# The total number of PVs : 414 
 
 global {dev=$(dev), link=$(link), location=$(location)}
 

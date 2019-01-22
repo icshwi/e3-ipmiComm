@@ -18,8 +18,6 @@ epicsEnvSet("IOCNAME", "$(SESSION)")
 epicsEnvSet("PREFIX", "$(SESSION)-IPMI:SUB-SEC")
 
 iocshLoad("$(ipmiComm_DIR)/mtca9u_std.iocsh", "SESS=$(SESSION),INET=$(IPMISERVER),PREF=$(PREFIX),LOCT=$(LOCATION)")
-iocshLoad("$(ipmiComm_DIR)/ifc14xx.iocsh",    "SESS=$(SESSION),PREF=$(PREFIX),UNIT=1,FRUID=12")
-
 
 #loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
 #loadIocsh("recsync.iocsh",  "IOCNAME=$(IOCNAME)")
