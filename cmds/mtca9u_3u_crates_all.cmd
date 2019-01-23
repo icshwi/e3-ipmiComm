@@ -1,7 +1,7 @@
 
 # don't need to require asyn
 require ipmiComm,4.2.0
-#require iocStats,ae5d083
+require iocStats,ae5d083
 #require recsync,1.3.0
 #require autosave,5.9.0
 
@@ -38,10 +38,8 @@ epicsEnvSet("LOCT_MTCA3UB", "Rack 1 at ICS Tuna Lab")
 
 iocshLoad("$(ipmiComm_DIR)/mtca3u_std.iocsh", "SESS=$(SESS_MTCA3UB),INET=$(SERV_MTCA3UB),PREF=$(PREF_MTCA3UB),LOCT=$(LOCT_MTCA3UB)")
 
-
-
 epicsEnvSet("IOCNAME", "mtca9u3u-test")
-#loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
+loadIocsh("iocStats.iocsh", "IOCNAME=$(IOCNAME)")
 #loadIocsh("recsync.iocsh",  "IOCNAME=$(IOCNAME)")
 #loadIocsh("autosave.iocsh", "IOCNAME=autosave, AS_TOP=$(TOP)")
 
