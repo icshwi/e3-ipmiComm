@@ -16,11 +16,6 @@ file "system_common_ess.template"
    pattern {} {} 
 }
 
-file "system_chassis_status_ess.template"
-{
-   pattern {} {} 
-}
-
 file "cpu_type1_ess.db"
 {
    pattern { unit	, fruid }

@@ -1,3 +1,6 @@
+# Troublesome to access the following PVs
+# with Schroff MTCA / NAT-MCH, and so on.
+#
 # 24 bits assigned as follows:
 # 0-7   power state byte (bit 7 ignored)
 # 8-15  last power event byte (bits 5-7 ignored)

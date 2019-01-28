@@ -32,6 +32,8 @@ file "fru_common_ess.template"
 pattern {} {}
 }
 
+# We have issues on MTCA 9U crate. Cannot access values randomly.
+# 3U crate has no issues, so, disable them all. 
 file "sensor_ai_ess.template"
 {
    pattern { attr	, sensinst	, type	}
@@ -48,7 +50,8 @@ file "sensor_ai_ess.template"
 }		
 			
 			
-			
+
+				
 			
 			
 			

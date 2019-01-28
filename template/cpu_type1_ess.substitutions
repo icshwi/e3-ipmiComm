@@ -34,26 +34,14 @@ pattern {} {}
 }
 
 
-# CANNOT access three temperature values, so disable them
+# Concurrent CPU has the troubles to access all sensor lues, so disable them
 # It should test with the new concurrent CPU
-# file "sensor_ai_ess.template"
-# {
-#    pattern { attr	, sensinst	, type	}
-#            { CPUITEMP_	, 1		, 1	}
-#            { CPUATEMP_	, 2		, 1	}
-#            { AMBITEMP_	, 3		, 1	}
-#            { PSU12V_	, 1		, 2	}
-#            { PSU5V_	, 2		, 2	}
-#            { PSU3d3V_	, 3		, 2	}
-#            { PS1V05V_	, 4		, 2	}
-#            { PS1V0V_	, 5		, 2	}
-# 	   { COREV_	, 6		, 2	}
-  
-#  }		
-			
 file "sensor_ai_ess.template"
 {
    pattern { attr	, sensinst	, type	}
+           { CPUITEMP_	, 1		, 1	}
+           { CPUATEMP_	, 2		, 1	}
+           { AMBITEMP_	, 3		, 1	}
            { PSU12V_	, 1		, 2	}
            { PSU5V_	, 2		, 2	}
            { PSU3d3V_	, 3		, 2	}
@@ -63,11 +51,15 @@ file "sensor_ai_ess.template"
   
  }		
 			
+
+			
+
+
 			
 			
 			
-			
-			
+
+
 			
 			
 			
