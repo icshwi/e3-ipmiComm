@@ -22,7 +22,7 @@ file "cpu_type1_ess.db"
            { 1_  	, 6	}
 }
 
-file "evr_type1_ess.db"
+file "mtcaevr300_ess.db"
 {
    pattern { unit	, fruid }
            { 1_  	, 10	}
