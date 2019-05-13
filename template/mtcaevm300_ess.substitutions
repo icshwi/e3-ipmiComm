@@ -1,6 +1,6 @@
 #
 # Micro-Research Finland Oy mTCA.4 Event Master
-# mTCA-EVM-300
+# This is the standard ESS EVM for MTCA crate : mTCA-EVM-300
 #
 #
 # nat> show_fruinfo 6
@@ -52,6 +52,26 @@
 # ------------------------------------------------------------------
 
 
+# id can be defined as EVG or FOUT in a upper substitutions file
+# Here is the full example for the full slot with EVG and FOUT configuration
+# in 9U crate
+#
+#file "evm_type1_ess.db"
+#{
+#   pattern { id,  unit	, fruid }
+#           { EVG,  1_  , 2	}
+#           { FOUT, 1_  , 3     }
+#           { FOUT, 2_  , 4     }
+#           { FOUT, 3_  , 5     }
+#           { FOUT, 4_  , 6     }
+#           { FOUT, 5_  , 7     }
+#           { FOUT, 6_  , 8     }
+#           { FOUT, 7_  , 9     }
+#           { FOUT, 8_  , 10    }
+#           { FOUT, 9_  , 11    }
+#}
+
+
 
 global {dev=$(_PREF), link=$(_SESS), id=$(_ID), fruid=$(_FRUID)}
 
@@ -61,12 +81,13 @@ file "fru_common_ess.template"
    	   { $(_UNIT)_  }
 }
 
+
 file "sensor_ai_ess.template"
 {
    pattern { attr	, sensinst	, type	, prefix      }
-           { REF_	, 1		, 2	, $(_ID)$(_UNIT)_}
-           { TEMP1_	, 2		, 2	, $(_ID)$(_UNIT)_}
-           { TEMP2_	, 3		, 2	, $(_ID)$(_UNIT)_}
+           { REFV_	, 1		, 2	, $(_ID)$(_UNIT)_}
+           { TEMP1V_	, 2		, 2	, $(_ID)$(_UNIT)_}
+           { TEMP2V_	, 3		, 2	, $(_ID)$(_UNIT)_}
            { 1d0V_	, 4		, 2	, $(_ID)$(_UNIT)_}	   
            { 1d8V_	, 5		, 2	, $(_ID)$(_UNIT)_}
            { 12dV_	, 6		, 2	, $(_ID)$(_UNIT)_}
@@ -76,19 +97,8 @@ file "sensor_ai_ess.template"
            { FPGATEMP_	, 2		, 1	, $(_ID)$(_UNIT)_}
 }		
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
+
 			
 			
 			

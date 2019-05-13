@@ -1,6 +1,6 @@
 #
 #  Copyright (c) 2019            Jeong Han Lee
-#  Copyright (c) 2017 - Present  European Spallation Source ERIC
+#  Copyright (c) 2017 - 2019     European Spallation Source ERIC
 #
 #  The program is free software: you can redistribute
 #  it and/or modify it under the terms of the GNU General Public License
@@ -18,18 +18,13 @@
 # 
 # Author  : Jeong Han Lee
 # email   : han.lee@esss.se
-# Date    : Wednesday, January 16 11:35:46 CET 2019
-# version : 0.0.3
+# Date    : Monday, May 13 14:29:29 CEST 2019
+# version : 0.0.4
 
 ## The following lines are mandatory, please don't change them.
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 include $(E3_REQUIRE_TOOLS)/driver.makefile
 include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
-
-
-
-## Exclude linux-ppc64e6500
-EXCLUDE_ARCHS = linux-ppc64e6500
 
 
 ifneq ($(strip $(ASYN_DEP_VERSION)),)
@@ -75,8 +70,8 @@ SUBS += $(APPDB)/fru_basic_ess.substitutions
 SUBS += $(wildcard $(APPDB)/others_*_ess.substitutions)
 SUBS += $(wildcard $(APPDB)/ifc14*_ess.substitutions)
 SUBS += $(wildcard $(APPDB)/sis8300*_ess.substitutions)
-SUBS += $(wildcard $(APPDB)/evr_*_ess.substitutions)
-SUBS += $(wildcard $(APPDB)/evm_*_ess.substitutions)
+SUBS += $(wildcard $(APPDB)/mtcaevr*_ess.substitutions)
+SUBS += $(wildcard $(APPDB)/mtcaevm*_ess.substitutions)
 SUBS += $(wildcard $(APPDB)/cpu_*_ess.substitutions)
 SUBS += $(wildcard $(APPDB)/mch_*_ess.substitutions)
 SUBS += $(wildcard $(APPDB)/cu_*_ess.substitutions)
