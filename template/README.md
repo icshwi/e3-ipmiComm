@@ -225,6 +225,11 @@ We have
 * 17 currents
 
 can be translated into
+with the following definition type:
+* TEMP    : type 1
+* Voltage : type 2
+* Current : type 3
+
 
 ```
 
@@ -249,14 +254,14 @@ file "sensor_ai_ess.template"
            { I		, 7		, 3	}
            { I		, 8		, 3	}
            { I		, 9		, 3	}
-           { I		, 10		, 3	}
-	   { I		, 11		, 3	}
-           { I		, 12		, 3	}
-           { I		, 13		, 3	}
-           { I		, 14		, 3	}
-           { I		, 15		, 3	}
-           { I		, 16		, 3	}
-           { I		, 17		, 3	}
+           { I		, 10	, 3	}
+		   { I		, 11	, 3	}
+           { I		, 12	, 3	}
+           { I		, 13	, 3	}
+           { I		, 14	, 3	}
+           { I		, 15	, 3	}
+           { I		, 16	, 3	}
+           { I		, 17	, 3	}
  }		
 
 
