@@ -1,4 +1,4 @@
 [submodule "ipmiComm"]
 	path = ipmiComm
 	url = https://github.com/icshwi/ipmiComm
-	ignore = all
+	ignore = dirty
