@@ -2,6 +2,15 @@ e3-ipmiComm
 =====
 ESS Site-specific EPICS module : ipmiComm
 
+
+
+## Dependency Plot
+
+|![ipmiComm dep](docs/ipmiComm.png)|
+| :---: |
+|**Figure 1** Depdendency Tree. |
+
+## Commands
 ```
 $ make init
 $ make build
