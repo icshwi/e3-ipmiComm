@@ -43,59 +43,43 @@
 
 
 
+
+
 global {dev=$(dev), id=PM, unit=$(unit), fruid=$(fruid), prefix=$(id)$(unit)}
 
 file "fru_common_ess.template"
 {
-pattern {} {}
+    pattern {}
+            {}
 }
 
 file "sensor_ai_ess.template"
 {
-   pattern { attr	, sensinst	, type	}
-           { CPU0TEMP_	, 1		, 1	}
-           { PATHTEMP_	, 2		, 1	}
-           { COOLTEMP_	, 3		, 1	}
-           { TRAFTEMP_	, 4		, 1	}
-           { MP00V_	, 1		, 2	}
-           { SMP0V_	, 2		, 2	}
-           { SMPPV_	, 3		, 2	}
-           { PP00V_	, 4		, 2	}
-           { 12HHV_	, 5		, 2	}
-           { SUM0I_	, 1		, 3	}
-           { CH01I_	, 2		, 3	}
-           { CH02I_	, 3		, 3	}
-           { CH03I_	, 4		, 3	}
-           { CH04I_	, 5		, 3	}
-           { CH05I_	, 6		, 3	}
-           { CH06I_	, 7		, 3	}
-           { CH07I_	, 8		, 3	}
-           { CH08I_	, 9		, 3	}
-           { CH09I_	, 10		, 3	}
-	   { CH10I_	, 11		, 3	}
-           { CH11I_	, 12		, 3	}
-           { CH12I_	, 13		, 3	}
-           { CH13I_	, 14		, 3	}
-           { CH14I_	, 15		, 3	}
-           { CH15I_	, 16		, 3	}
-           { CH16I_	, 17		, 3	}
- }		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+    pattern { attr       , sensinst , type }
+            { CPU0TEMP   , 1        , 1    }
+            { PATHTEMP   , 2        , 1    }
+            { COOLTEMP   , 3        , 1    }
+            { TRAFTEMP   , 4        , 1    }
+            { MP00V      , 1        , 2    }
+            { SMP0V      , 2        , 2    }
+            { SMPPV      , 3        , 2    }
+            { PP00V      , 4        , 2    }
+            { 12HHV      , 5        , 2    }
+            { SUM0I      , 1        , 3    }
+            { CH01I      , 2        , 3    }
+            { CH02I      , 3        , 3    }
+            { CH03I      , 4        , 3    }
+            { CH04I      , 5        , 3    }
+            { CH05I      , 6        , 3    }
+            { CH06I      , 7        , 3    }
+            { CH07I      , 8        , 3    }
+            { CH08I      , 9        , 3    }
+            { CH09I      , 10       , 3    }
+            { CH10I      , 11       , 3    }
+            { CH11I      , 12       , 3    }
+            { CH12I      , 13       , 3    }
+            { CH13I      , 14       , 3    }
+            { CH14I      , 15       , 3    }
+            { CH15I      , 16       , 3    }
+            { CH16I      , 17       , 3    }
+}

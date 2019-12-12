@@ -1,0 +1,34 @@
+#
+#  Struck Innovative Systeme GmbH, SIS8300KU RTM
+#          This is the standard ESS BPM SIS8300KU RTM
+#
+#
+# nat>show_sensorinfo 94
+# Sensor Information for FRU 94 / RTM5
+# ==================================================================
+#   #   SDRType  Sensor Entity Inst  Value   State    Name
+# ------------------------------------------------------------------
+#   -   FDevLoc          0xc0  0x65                    SIS8300KU RTM
+#  32   Full     0xf2    0xc0  0x65  0xa1              RTM Hot Swap
+#  33   Compact  0x0b    0xc0  0x65  0x00              0x00  5410ECBB5D7A   
+#  34   Full     Temp    0xc0  0x65  35.0 C     ok     Temp 1
+#  35   Compact  0xf0    0xc0  0x65  0x10              HS 094 RTM5
+# ------------------------------------------------------------------
+
+
+
+
+
+global {dev=$(dev), id=RTM, unit=$(unit), fruid=$(fruid), prefix=$(id)$(unit)}
+
+file "fru_common_ess.template"
+{
+    pattern {}
+            {}
+}
+
+file "sensor_ai_ess.template"
+{
+    pattern { attr       , sensinst , type }
+            { PCBTEMP    , 1        , 1    }
+}

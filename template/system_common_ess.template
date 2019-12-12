@@ -1,4 +1,4 @@
-record(mbbi, "$(dev):TYPE_RAW") {
+record(mbbi, "$(dev)TYPE_RAW") {
  field(DESC, "Device type")
  field(DTYP, "MCHsensor")
  field(SCAN, "I/O Intr")
@@ -27,14 +27,14 @@ record(mbbi, "$(dev):TYPE_RAW") {
  field(PINI, "YES")
 }
 
-record(stringin, "$(dev):LOC") {
+record(stringin, "$(dev)LOC") {
   field(PINI, "YES")
   field(VAL, "$(location)")
   info(autosaveFields,"VAL")
 }
 
 # Control debug message verbosity
-record(mbbo, "$(dev):DBG") {
+record(mbbo, "$(dev)DBG") {
  field(DTYP, "MCHsensor")
  field(OMSL, "supervisory")
  field(ZRVL, "0")
@@ -50,7 +50,7 @@ record(mbbo, "$(dev):DBG") {
  field(PINI, "YES")
 }
 
-record(bi, "$(dev):ONLNSTAT") {
+record(bi, "$(dev)ONLNSTAT") {
  field(DESC, "MCH online status")
  field(DTYP, "MCHsensor")
  field(SCAN, "I/O Intr")
@@ -62,7 +62,7 @@ record(bi, "$(dev):ONLNSTAT") {
  field(PINI, "YES")
 }
 
-record(mbbi, "$(dev):INIT") {
+record(mbbi, "$(dev)INIT") {
  field(DESC, "MCH comm initialized")
  field(DTYP, "MCHsensor")
  field(SCAN, "I/O Intr")
@@ -82,7 +82,7 @@ record(mbbi, "$(dev):INIT") {
  field(PINI, "YES")
 }
 
-record(bo, "$(dev):INITBYP") {
+record(bo, "$(dev)INITBYP") {
  field(DESC, "Override init for testing")
  field(DTYP, "MCHsensor")
  field(OMSL, "supervisory")
@@ -94,7 +94,7 @@ record(bo, "$(dev):INITBYP") {
  field(PINI, "NO")
 }
 
-record(bo, "$(dev):CONNECT") {
+record(bo, "$(dev)CONNECT") {
  field(DESC, "Enable comm with MCH")
  field(DTYP, "MCHsensor")
  field(OMSL, "supervisory")
@@ -115,7 +115,7 @@ record(bo, "$(dev):CONNECT") {
 # trouble at that rate
 # Must match SENSOR_SCAN_PERIODS array 
 # definition in devMch.c
-record(mbbo, "$(dev):SENSOR_SCAN_PERIOD") {
+record(mbbo, "$(dev)SENSOR_SCAN_PERIOD") {
  field(DTYP, "MCHsensor")
  field(OMSL, "supervisory")
  field(ZRVL, "0")
@@ -133,4 +133,11 @@ record(mbbo, "$(dev):SENSOR_SCAN_PERIOD") {
  field(RVAL, "1")
  field(PINI, "YES")
  info(autosaveFields,"VAL RVAL")
+}
+
+# Peform Crate 'Cold Reset'
+record(bo, "$(dev)RESET") {
+ field(DTYP, "MCHsensor")
+ field(OMSL, "supervisory")
+ field(OUT, "#B0 C0 N0 @$(link)+reset")
 }

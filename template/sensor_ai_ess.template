@@ -1,20 +1,20 @@
 # ai sensor record
 # DESC, EGU set by device support
-record(ai, "$(dev):$(prefix)$(attr)$(sensinst)")
+record(ai, "$(dev)$(prefix)$(attr)")
 {
     field(DESC, "")
     field(SCAN, "I/O Intr")
     field(DTYP, "MCHsensor")
     field(INP, "#B$(fruid) C$(type) N$(sensinst) @$(link)+sens")
     field(PREC, "1")
-    field(SDIS, "$(dev):$(prefix)$(attr)$(sensinst)P.SEVR")
+    field(SDIS, "$(dev)$(prefix)$(attr)P.SEVR")
     field(DISV, "2")
     field(PINI, "YES")
 }
 
 # sensor 'presence' record to indicate whether sensor 
 # is active; used by edm visibility rules
-record(bi, "$(dev):$(prefix)$(attr)$(sensinst)P")
+record(bi, "$(dev)$(prefix)$(attr)P")
 {
     field(DESC, "Sensor presence")
     field(SCAN, "I/O Intr")

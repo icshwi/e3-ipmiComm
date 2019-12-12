@@ -1,10 +1,10 @@
 
-# 
-# FRUID 1 
+#
+# FRUID 1
 # Manufacturer(12)         : Schroff GmbH
 # Board Name(26)           : Schroff MicroTCA Backplane
 # Product Name(22)         : Schroff MicroTCA Shelf
-# FRUID 2 
+# FRUID 2
 # Manufacturer(12)         : Schroff GmbH
 # Board Name(26)           : Schroff MicroTCA Backplane
 # Product Name(22)         : Schroff MicroTCA Shelf
@@ -23,13 +23,8 @@ global {dev=$(dev)}
 
 file "fru_common_ess.template"
 {
-   pattern { id		, unit	, fruid	}
-           { SH		, 1_  	, 1	}
-           { SH		, 2_  	, 2	}
-           { CM		, 1_  	, 253	}
-           { SHM	, 1_  	, 254	}
+    pattern { id         , unit , fruid }
+            { SH         , 1_    , 1     }
+            { SH         , 2_    , 3     }
+            { CM         , 1_    , 0     }
 }
-
-
-
-

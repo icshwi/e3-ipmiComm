@@ -1,5 +1,5 @@
 #
-# ESS 3U 12 slot Standard MTCA Crate Configuration
+# ESS 3U 6 slot Standard MTCA Crate Configuration
 #
 # * Schroff 3 U
 # * 1 NAT MCH
@@ -7,53 +7,47 @@
 # * 1 Concurrent CPU AM 900/412 (AMC2, FRUID 6 )
 # * 1 MTCA EVR 300U (AMC6, FRUID 10)
 #
-# The total number of PVs : 414 
 
 global {dev=$(dev), link=$(link), location=$(location)}
 
 file "system_common_ess.template"
 {
-   pattern {} {} 
+    pattern {}
+            {}
 }
 
 file "cpu_type1_ess.db"
 {
-   pattern { unit	, fruid }
-           { 1_  	, 6	}
+    pattern { unit   , fruid }
+            { 1_     , 6     }
 }
 
 file "mtcaevr300_ess.db"
 {
-   pattern { unit	, fruid }
-           { 1_  	, 10	}
+    pattern { unit   , fruid }
+            { 1_     , 10    }
 }
-
 
 file "mch_type1_ess.db"
 {
-   pattern { unit }
-           { 1_   }
+    pattern { unit }
+            { 1_   }
 }
-
-
 
 file "pm_type2_ess.db"
 {
-   pattern { unit	, fruid }
-           { 1_  	, 50	}
+    pattern { unit   , fruid }
+            { 1_     , 50    }
 }
-
 
 file "cu_type2_ess.db"
 {
-   pattern { unit	, fruid	}
-           { 1_  	, 40	}
+    pattern { unit   , fruid }
+            { 1_     , 40    }
 }
 
 file "others_type1_ess.db"
 {
-  pattern { }
-  	  { }
+    pattern {}
+            {}
 }
-
-

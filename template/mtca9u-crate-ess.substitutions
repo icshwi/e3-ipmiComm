@@ -30,7 +30,7 @@ file "cpu_type1_ess.db"
 file "mtcaevr300_ess.db"
 {
    pattern { unit	, fruid }
-           { 1_  	, 6	}
+           { 1_  	, 12	}
 }
 
 
