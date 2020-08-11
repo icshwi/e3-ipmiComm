@@ -31,42 +31,23 @@ global {dev=$(_PREF), link=$(_SESS), id=$(_ID), fruid=$(_FRUID)}
 
 file "fru_common_ess.template"
 {
-   pattern {  unit    } 
-   	   { $(_UNIT)_  }
+pattern { unit      }
+        { $(_UNIT)  }
 }
 
 file "sensor_ai_ess.template"
 {
-   pattern { attr	, sensinst	, type	, prefix      }
-           { PCBTTEMP_	, 1		, 1	, $(_ID)$(_UNIT)_}
-           { PCBBTEMP_	, 2		, 1	, $(_ID)$(_UNIT)_}
-           { CPUDTEMP_	, 3		, 1	, $(_ID)$(_UNIT)_}
-           { CPUSTEMP_	, 4		, 1	, $(_ID)$(_UNIT)_}	   
-           { VAA1V0V_	, 1		, 2	, $(_ID)$(_UNIT)_}
-           { VAA1V2V_	, 2		, 2	, $(_ID)$(_UNIT)_}
-           { VAA1V35V_	, 3		, 2	, $(_ID)$(_UNIT)_}
-           { VAA1V8V_	, 4		, 2	, $(_ID)$(_UNIT)_}
-           { VBB1V0V_	, 5		, 2	, $(_ID)$(_UNIT)_}
-	   { VCC1V0V_	, 6		, 2	, $(_ID)$(_UNIT)_}
-           { VCC1V35V_	, 7		, 2	, $(_ID)$(_UNIT)_}
-	   { FPGACORV_	, 8		, 2	, $(_ID)$(_UNIT)_}   
-}		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+pattern { attr,         sensinst,   type,   prefix          }
+        { PCBTTEMP-,    1,          1,      $(_ID)$(_UNIT)  }
+        { PCBBTEMP-,    2,          1,      $(_ID)$(_UNIT)  }
+        { CPUDTEMP-,    3,          1,      $(_ID)$(_UNIT)  }
+        { CPUSTEMP-,    4,          1,      $(_ID)$(_UNIT)  }
+        { VAA1V0V-,     1,          2,      $(_ID)$(_UNIT)  }
+        { VAA1V2V-,     2,          2,      $(_ID)$(_UNIT)  }
+        { VAA1V35V-,    3,          2,      $(_ID)$(_UNIT)  }
+        { VAA1V8V-,     4,          2,      $(_ID)$(_UNIT)  }
+        { VBB1V0V-,     5,          2,      $(_ID)$(_UNIT)  }
+        { VCC1V0V-,     6,          2,      $(_ID)$(_UNIT)  }
+        { VCC1V35V-,    7,          2,      $(_ID)$(_UNIT)  }
+        { FPGACORV-,    8,          2,      $(_ID)$(_UNIT)  }
+}

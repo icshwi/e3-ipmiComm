@@ -1,16 +1,15 @@
-e3-ipmiComm
-=====
+# e3-ipmiComm
+
 ESS Site-specific EPICS module : ipmiComm
 
+## Dependencies
 
-
-## Dependency Plot
-
-|![ipmiComm dep](docs/ipmiComm.png)|
-| :---: |
-|**Figure 1** Depdendency Tree. |
+Base 7.0.3.1
+require 3.1.2
+Asyn 4.36.0
 
 ## Commands
+
 ```
 $ make init
 $ make build
@@ -27,7 +26,6 @@ bash tools/remove_alias.bash
 
 [ESS Specific DB Files](template/README.md)
 
-
 ## MCH access
 
 We uses the MOXA to MCH with a debug cable, so one can access the MCH via
@@ -36,10 +34,10 @@ We uses the MOXA to MCH with a debug cable, so one can access the MCH via
 telnet 10.4.8.102 4001
 ```
 
-
 Disable all debug messages, reboot.... mch, type z..
+
 ```
- cmu_dbg                  - configure CM upper part debug
+  cmu_dbg                  - configure CM upper part debug
   csif_dbg                 - configure CM/ShM interface debug
   imsg_dbg                 - configure IPMI MSG debug
   lshm_dbg                 - configure local ShM debug
@@ -49,10 +47,7 @@ Disable all debug messages, reboot.... mch, type z..
   sel_dbg                  - configure SEL debug
 ```
 
-
-
-
-```
+```console
 nat> csif_dbg
 
 CSIF debug level codes:
@@ -63,7 +58,9 @@ CSIF debug level codes:
   DATA debugs     : 0x00000100 (disabled)
   current setting : 0x00000006
 Enter debug state (RET=6/0x6): 0
+```
 
+```console
 nat> csif_dbg
 
 CSIF debug level codes:
@@ -74,7 +71,9 @@ CSIF debug level codes:
   DATA debugs     : 0x00000100 (disabled)
   current setting : 0x00000000
 Enter debug state (RET=0/0x0):
+```
 
+```console
 nat> sel_dbg
 
 SEL debug level codes:
@@ -96,6 +95,7 @@ SEL debug level codes:
   current setting : 0x00000000
 Enter debug state (RET=0/0x0): 
 
+```console
 nat> imsg_dbg
 
 IPMI_MSG debug level codes:
@@ -108,7 +108,9 @@ IPMI_MSG debug level codes:
   MSG specific debugs : 0x00100000 (disabled)
   current setting     : 0x00000007
 Enter debug state (RET=7/0x7): 0
+```
 
+```console
 nat> lshm_dbg
 
 LSHM debug level codes:
@@ -131,6 +133,4 @@ LSHM debug level codes:
   EVT debugs      : 0x00010000 (disabled)
   current setting : 0x00000000
 Enter debug state (RET=0/0x0): 
-
-
 ```

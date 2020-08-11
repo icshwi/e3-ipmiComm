@@ -1,10 +1,9 @@
-ESS Customized DB and Template files
-======
+# ESS Customized DB and Template files
 
-
-SLAC has db, substitutions, substitutions, and they are inflating into db files all. However, ESS has template, substitutions, substitutions, and only sumstitutions are inflating into db files. 
+SLAC has db, substitutions, substitutions, and they are inflating into db files all. However, ESS has template, substitutions, substitutions, and only substitutions are inflating into db files. 
 
 ## dev
+
 Due to the ESS naming convention, we touch db template files. So, `dev` can be expanded into `A-B:C-D:IPMI_NAME`. 
 
 ##  db template files
@@ -18,7 +17,6 @@ No alias version of the SLAC original ones
 - [x] `system_common_ess.template`
 - [x] `system_chassis_status_ess.template`
 
-
 ## Files that make up our high-level templates
 
 - [x] `fru_basic_ess.substitutions`    (fru_common_ess.template, sensor_ai_ess.template)
@@ -30,6 +28,7 @@ No alias version of the SLAC original ones
 - [x] `sensor_hub_ess.substitutions`   (sensor_ai_ess.template)
 
 ## substitutions files to be loaded per device 
+
 Note that **-ess.substitutions** instead of **_ess.substitutions**.
 
 - [x] `mtca9u-ess.substitutions`
@@ -43,7 +42,7 @@ Note that **-ess.substitutions** instead of **_ess.substitutions**.
   - sensor_clock_ess.db
   - sensor_hub_ess.db
   
-- [ ] `mtca3u-ess.substitutions`
+- [x] `mtca3u-ess.substitutions`
   - system_common_ess.template
   - system_powerstate_unsupported_ess.template
   - fru_basic_ess.db
@@ -52,8 +51,7 @@ Note that **-ess.substitutions** instead of **_ess.substitutions**.
 
 # Identify correct sensor info
 
-
-```
+```console
 nat> show_fru
 
 FRU Information:
@@ -73,7 +71,7 @@ FRU Information:
 ```
 ## fru_cu_ess.substitutions
 
-```
+```console
 nat> show_cu
 System has 2 Cooling Unit(s)
 -----------------------------------------------
@@ -85,8 +83,7 @@ Site   FRU   i2c    MIN  NORM  MAX   Level
 -----------------------------------------------
 ```
 
-
-```
+```console
 nat> show_sensorinfo 40
 Sensor Information for FRU 40 / CU1
 ==================================================================
@@ -121,24 +118,24 @@ can be translated into
 ```
 file "sensor_ai_ess.template"
 {
-   pattern { attr	, sensinst	, type	}
-           { TEMP	, 1		, 1	}
-           { TEMP	, 2		, 1	}
-           { V		, 1		, 2	}
-           { V		, 2		, 2	}
-           { V		, 3		, 2	}
-   	   { FANSPEED	, 1		, 4	}
-           { FANSPEED	, 2		, 4	}
-           { FANSPEED	, 3		, 4	}
-           { FANSPEED	, 4		, 4	}
-           { FANSPEED	, 5		, 4	}
-           { FANSPEED	, 6		, 4	}
-}	
+   pattern { attr	    , sensinst	, type	}
+           { TEMP 	  , 1	      	, 1	}
+           { TEMP    	, 2	      	, 1	}
+           { V		    , 1	      	, 2	}
+           { V	    	, 2		      , 2	}
+           { V  	  	, 3	      	, 2	}
+   	       { FANSPEED	, 1	      	, 4	}
+           { FANSPEED	, 2	      	, 4	}
+           { FANSPEED	, 3	      	, 4	}
+           { FANSPEED	, 4	      	, 4	}
+           { FANSPEED	, 5	      	, 4	}
+           { FANSPEED	, 6	      	, 4	}
+}
 ```
 
 ## fru_pm_ess.substitutions
 
-```
+```console
 nat> show_pm
 ---------------------------------------------------------------
 PM1: - unknown
@@ -165,7 +162,9 @@ PM4: - unknown
  15  AMC11    15   2       -      -    -    -    -   -         
  16  AMC12    16   2       -      -    -    -    -   -         
 |-------------------------------------------------------------|
+```
 
+```console
 nat> show_pwrconf
 Backplane power policy: REDUNDANCY  -  backplane channel assignment:
 -------------------------------------------------------------------------------------------
@@ -176,7 +175,9 @@ PM3( -  ) |
 PM4(sec ) |   x    x    x    x    x    x    x    x    x    x    x    x    x    x    x    x  
 BP Amps:  |  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0  8.0 
 -------------------------------------------------------------------------------------------
+```
 
+```console
 nat> show_sensorinfo 51
 Sensor Information for FRU 51 / PM2
 ==================================================================
@@ -214,10 +215,7 @@ Sensor Information for FRU 51 / PM2
  29   Event       -    0x0a  0x00                    PM_Stat
  28   Compact  0xf0    0x0a  0x62  0x10              HS 051 PM2
 ------------------------------------------------------------------
-
 ```
-
-
 
 We have
 * 4 temperatures
@@ -230,9 +228,7 @@ with the following definition type:
 * Voltage : type 2
 * Current : type 3
 
-
 ```
-
 file "sensor_ai_ess.template"
 {
    pattern { attr	, sensinst	, type	}
@@ -255,7 +251,7 @@ file "sensor_ai_ess.template"
            { I		, 8		, 3	}
            { I		, 9		, 3	}
            { I		, 10	, 3	}
-		   { I		, 11	, 3	}
+	       { I		, 11	, 3	}
            { I		, 12	, 3	}
            { I		, 13	, 3	}
            { I		, 14	, 3	}
@@ -263,13 +259,11 @@ file "sensor_ai_ess.template"
            { I		, 16	, 3	}
            { I		, 17	, 3	}
  }		
-
-
 ```
 
 ## fru_basic_ess.substitutions
 
-```
+```console
 nat> show_fruinfo 3 
 ---------------------------------------
 FRU Info for device 3:
@@ -320,7 +314,9 @@ Data  =buf 0x41b1dd80 len 189
  00 00 00 00 00 00 00 00   00 00 00 00 00 00 00 00
  00 00 00 00 00 00 00 00   00 00 00 f1 37
 ---------------------------------------
+```
 
+```console
 nat> show_sensorinfo 3
 Sensor Information for FRU 3 / MCMC1
 ==================================================================
@@ -340,7 +336,4 @@ Sensor Information for FRU 3 / MCMC1
  11   Full     Current 0xc2  0x61  1.58 A     ok     Base Current
  12   Compact  0xf0    0xc2  0x61  0x10              HS 003 MCMC1
 ------------------------------------------------------------------
-
-
 ```
-

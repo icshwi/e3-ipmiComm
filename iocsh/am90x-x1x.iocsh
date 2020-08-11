@@ -1,12 +1,12 @@
-#- ###   ESS MTCA IOxOS IFC 14xx iocsh              ###
+#- ###   Concurrent CPU AM 90x/x1x iocsh            ###
 #- ####################################################
 #- >> Mandatory
 #- SESS           - SESSION NAME  (MUST BE lowercase)
 #- PREF           - PREFIX for the naming
-#- FRUID          - FRUID 
+#- FRUID          - FRUID
 #- >> Optional
-#- ID             - Default ID, Default : "8300KU"
+#- ID             - Default ID, Default : "CPU"
 #- UNIT           - Default UNIT, Default : "100-"
 #- ####################################################
 
-dbLoadRecords("sis8300ku_ess.db", "_PREF=$(PREF), _SESS=$(SESS), _UNIT=$(UNIT=100-), _FRUID=$(FRUID), _ID=$(ID=8300KU)")
+dbLoadRecords("cpu_type1_ess.db", "_PREF=$(PREF), _SESS=$(SESS), unit=$(UNIT=100-), _FRUID=$(FRUID), _ID=$(ID=CPU)")

@@ -3,20 +3,18 @@
 #- >> Mandatory
 #- SESS           - SESSION NAME  (MUST BE lowercase)
 #- INET           - IPMI SERVER INET
-#- PREF            - PREFIX for the naming 
+#- PREF           - PREFIX for the naming 
 #- >> Optional
 #- PORT           - IPMI SERVER PORT, Default : 623
 #- PROT           - IPMI SERVER PROTOCOL, Default : udp
-#- PRIO           -      PRIORITY
-#- NOAUTOCONN     -      Zero or missing indicates that portThread should automatically connect.
-#- NOEOS          -      asynInterposeEosConfig
+#- PRIO           - PRIORITY
+#- NOAUTOCONN     - Zero or missing indicates that portThread should automatically connect.
+#- NOEOS          - asynInterposeEosConfig
 #- LOCT           - Physical Location, Default : ""
 #- ####################################################
-#-
+
 drvAsynIPPortConfigure("$(SESS)","$(INET):$(PORT=623) $(PROT=udp)", $(PRIO=0), $(NOAUTOCONN=0), $(NOEOS=0))
-#-
+
 mchInit("$(SESS)")
-#-
+
 dbLoadRecords("mtca9u-crate-ess.db", "dev=$(PREF),link=$(SESS),location=$(LOCT=)")
-#-
-#- Don't forget the new line

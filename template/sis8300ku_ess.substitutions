@@ -30,51 +30,28 @@
 #  18   Compact  0xf0    0xc1  0x64  0x10              HS 008 AMC4
 # ------------------------------------------------------------------
 
-
-
-
 global {dev=$(_PREF), link=$(_SESS), id=$(_ID), fruid=$(_FRUID)}
 
 file "fru_common_ess.template"
 {
-   pattern {  unit    } 
-   	   { $(_UNIT)_  }
+pattern { unit      }
+        { $(_UNIT)  }
 }
 
 file "sensor_ai_ess.template"
 {
-   pattern { attr	, sensinst	, type	, prefix      }
-           { PP12V_	, 1		, 2	, $(_ID)$(_UNIT)_}
-           { PP3d3V_	, 2		, 2	, $(_ID)$(_UNIT)_}
-           { CORd95V_	, 3		, 2	, $(_ID)$(_UNIT)_}
-           { 2d5V_	, 4		, 2	, $(_ID)$(_UNIT)_}
-           { 1d8V_	, 5		, 2	, $(_ID)$(_UNIT)_}
-	   { DDR1d2V_	, 6		, 2	, $(_ID)$(_UNIT)_}
-           { RTMPPI_	, 1		, 3	, $(_ID)$(_UNIT)_}
-           { RTMMPI_	, 2		, 3	, $(_ID)$(_UNIT)_}	   
-           { INLTEMP_	, 1		, 1	, $(_ID)$(_UNIT)_}
-           { OUTTEMP_	, 2		, 1	, $(_ID)$(_UNIT)_}
-           { MIDTEMP_	, 3		, 1	, $(_ID)$(_UNIT)_}
-           { PCBTEMP_	, 4		, 1	, $(_ID)$(_UNIT)_}
-           { DIETEMP_	, 5		, 1	, $(_ID)$(_UNIT)_}	   	   
-
-}		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+pattern { attr,     sensinst,   type,   prefix          }
+        { PP12V-,   1,          2,      $(_ID)$(_UNIT)  }
+        { PP3d3V-,  2,          2,      $(_ID)$(_UNIT)  }
+        { CORd95V-, 3,          2,      $(_ID)$(_UNIT)  }
+        { 2d5V-,    4,          2,      $(_ID)$(_UNIT)  }
+        { 1d8V-,    5,          2,      $(_ID)$(_UNIT)  }
+        { DDR1d2V-, 6,          2,      $(_ID)$(_UNIT)  }
+        { RTMPPI-,  1,          3,      $(_ID)$(_UNIT)  }
+        { RTMMPI-,  2,          3,      $(_ID)$(_UNIT)  }
+        { INLTEMP-, 1,          1,      $(_ID)$(_UNIT)  }
+        { OUTTEMP-, 2,          1,      $(_ID)$(_UNIT)  }
+        { MIDTEMP-, 3,          1,      $(_ID)$(_UNIT)  }
+        { PCBTEMP-, 4,          1,      $(_ID)$(_UNIT)  }
+        { DIETEMP-, 5,          1,      $(_ID)$(_UNIT)  }
+}

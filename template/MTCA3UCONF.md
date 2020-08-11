@@ -3,9 +3,8 @@
 
 ## HW Configuration
 
+```console
 nat> show_fru
-
-```
 FRU Information:
 ----------------
  FRU  Device   State  Name
@@ -23,7 +22,8 @@ FRU Information:
  61   HubMod1   M4    MCH-PCIe
 ==========================================
 ```
-```
+
+```console
 nat> show_sensorinfo 3
 Sensor Information for FRU 3 / MCMC1
 ==================================================================
@@ -45,8 +45,7 @@ Sensor Information for FRU 3 / MCMC1
 ------------------------------------------------------------------
 ```
 
-
-```
+```console
 nat> R(61,17,1)show_sensorinfo 6
 Sensor Information for FRU 6 / AMC2
 ==================================================================
@@ -66,6 +65,9 @@ Sensor Information for FRU 6 / AMC2
  11   Compact  0xf2    0xc1  0x62  0x01              Ejector Handle
  12   Compact  0xf0    0xc1  0x62  0x10              HS 006 AMC2
 ------------------------------------------------------------------
+```
+
+```console
 nat> show_sensorinfo 7
 Sensor Information for FRU 7 / AMC3
 ==================================================================
@@ -86,7 +88,9 @@ Sensor Information for FRU 7 / AMC3
  11   Full     Temp    0xc1  0x63  57.5 C     ok     FPGA
  12   Compact  0xf0    0xc1  0x63  0x10              HS 007 AMC3
 ------------------------------------------------------------------
+```
 
+```console
 nat> show_sensorinfo 8
 Sensor Information for FRU 8 / AMC4
 ==================================================================
@@ -106,7 +110,9 @@ Sensor Information for FRU 8 / AMC4
  10   Full     Temp    0xc1  0x64  42.5 C     ok     Local
  11   Full     Temp    0xc1  0x64  55.5 C     ok     FPGA
  12   Compact  0xf0    0xc1  0x64  0x10              HS 008 AMC4
+```
 
+```console
 nat> show_sensorinfo 9
 Sensor Information for FRU 9 / AMC5
 ==================================================================
@@ -127,7 +133,9 @@ Sensor Information for FRU 9 / AMC5
  11   Full     Temp    0xc1  0x65  50.5 C     ok     FPGA
  12   Compact  0xf0    0xc1  0x65  0x10              HS 009 AMC5
 ------------------------------------------------------------------
+```
 
+```console
 nat> show_sensorinfo 10
 Sensor Information for FRU 10 / AMC6
 ==================================================================
@@ -148,11 +156,9 @@ Sensor Information for FRU 10 / AMC6
  11   Full     Temp    0xc1  0x66  50.5 C     ok     FPGA
  12   Compact  0xf0    0xc1  0x66  0x10              HS 010 AMC6
 ------------------------------------------------------------------
-
-
 ```
 
-```
+```console
 nat> show_sensorinfo 40
 Sensor Information for FRU 40 / CU1
 ==================================================================
@@ -173,6 +179,9 @@ Sensor Information for FRU 40 / CU1
  11   Full     0xc0    0x1e  0x61  0x00                  0x02  Air Filter
  12   Compact  0xf0    0x1e  0x61  0x10              HS 040 CU1
 ------------------------------------------------------------------
+```
+
+```console
 nat> show_sensorinfo 50
 Sensor Information for FRU 50 / PM1
 ==================================================================
@@ -211,7 +220,9 @@ Sensor Information for FRU 50 / PM1
  30   Event       -    0x0a  0x00                    PM_Stat
  29   Compact  0xf0    0x0a  0x61  0x10              HS 050 PM1
 ------------------------------------------------------------------
+```
 
+```console
 nat> show_sensorinfo 60
 Sensor Information for FRU 60 / CLK1
 ==================================================================
@@ -225,6 +236,9 @@ Sensor Information for FRU 60 / CLK1
   5   Full     Voltage 0xc2  0x63  3.408 V    ok     3.3V
   6   Full     Voltage 0xc2  0x63  12.42 V    ok     12V
 ------------------------------------------------------------------
+```
+
+```console
 nat> show_sensorinfo 61
 Sensor Information for FRU 61 / HUB1
 ==================================================================
@@ -243,6 +257,4 @@ Sensor Information for FRU 61 / HUB1
  10   Full     Voltage 0xc2  0x64  3.360 V    ok     3.3V
  11   Full     Voltage 0xc2  0x64  12.18 V    ok     12V
 ------------------------------------------------------------------
-
-
 ```

@@ -1,12 +1,12 @@
-#- ###   ESS MTCA IOxOS IFC 14xx iocsh              ###
+#- ###   ESS MTCA MRF EVR iocsh                     ###
 #- ####################################################
 #- >> Mandatory
 #- SESS           - SESSION NAME  (MUST BE lowercase)
 #- PREF           - PREFIX for the naming
-#- FRUID          - FRUID 
+#- FRUID          - FRUID
 #- >> Optional
-#- ID             - Default ID, Default : "8300KU"
+#- ID             - Default ID, Default : "EVR"
 #- UNIT           - Default UNIT, Default : "100-"
 #- ####################################################
 
-dbLoadRecords("sis8300ku_ess.db", "_PREF=$(PREF), _SESS=$(SESS), _UNIT=$(UNIT=100-), _FRUID=$(FRUID), _ID=$(ID=8300KU)")
+dbLoadRecords("mtcaevr300_ess.db", "_PREF=$(PREF), _SESS=$(SESS), _UNIT=$(UNIT=100-), _FRUID=$(FRUID), _ID=$(ID=EVR)")

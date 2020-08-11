@@ -25,50 +25,25 @@
 # ------------------------------------------------------------------
 
 
-
-global {dev=$(dev), id=CPU, unit=$(unit), fruid=$(fruid), prefix=$(id)$(unit)}
+global {dev=$(_PREF), link=$(_SESS), id=$(_ID), fruid=$(_FRUID), prefix=$(_ID)$(unit)}
 
 file "fru_common_ess.template"
 {
 pattern {} {}
 }
 
-
-# Concurrent CPU has the troubles to access all sensor lues, so disable them
-# It should test with the new concurrent CPU
+# Concurrent CPU has troubles accessing all sensor values, so disable them
+# It should tested with the new concurrent CPU / Han
 file "sensor_ai_ess.template"
 {
-   pattern { attr	, sensinst	, type	}
-           { CPUITEMP_	, 1		, 1	}
-           { CPUATEMP_	, 2		, 1	}
-           { AMBITEMP_	, 3		, 1	}
-           { PSU12V_	, 1		, 2	}
-           { PSU5V_	, 2		, 2	}
-           { PSU3d3V_	, 3		, 2	}
-           { PS1V05V_	, 4		, 2	}
-           { PS1V0V_	, 5		, 2	}
-	   { COREV_	, 6		, 2	}
-  
- }		
-			
-
-			
-
-
-			
-			
-			
-
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+pattern { attr,         sensinst,   type    }
+        { CPUITEMP-,    1,          1       }
+        { CPUATEMP-,    2,          1       }
+        { AMBITEMP-,    3,          1       }
+        { PSU12V-,      1,          2       }
+        { PSU5V-,       2,          2       }
+        { PSU3d3V-,     3,          2       }
+        { PS1V05V-,     4,          2       }
+        { PS1V0V-,      5,          2       }
+        { COREV-,       6,          2       }
+}
