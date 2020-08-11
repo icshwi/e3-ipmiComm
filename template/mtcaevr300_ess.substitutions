@@ -63,14 +63,14 @@ pattern { unit          }
 file "sensor_ai_ess.template"
 {
 pattern { attr,         sensinst,   type,   prefix          }
-        { REFV-,        1,          2,      $(_ID)$(_UNIT)  }
-        { TEMP1V-,      2,          2,      $(_ID)$(_UNIT)  }
-        { TEMP2V-,      3,          2,      $(_ID)$(_UNIT)  }
+        { RefV-,        1,          2,      $(_ID)$(_UNIT)  }
+        { Temp1V-,      2,          2,      $(_ID)$(_UNIT)  }
+        { Temp2V-,      3,          2,      $(_ID)$(_UNIT)  }
         { 1d0V-,        4,          2,      $(_ID)$(_UNIT)  }
         { 1d8V-,        5,          2,      $(_ID)$(_UNIT)  }
         { 12dV-,        6,          2,      $(_ID)$(_UNIT)  }
         { 3d3V-,        7,          2,      $(_ID)$(_UNIT)  }
-        { MP3d3V-,      8,          2,      $(_ID)$(_UNIT)  }
-        { LOCATEMP-,    1,          1,      $(_ID)$(_UNIT)  }
-        { FPGATEMP-,    2,          1,      $(_ID)$(_UNIT)  }
+        { Mp3d3V-,      8,          2,      $(_ID)$(_UNIT)  }
+        { LocaTemp-,    1,          1,      $(_ID)$(_UNIT)  }
+        { FpgaTemp-,    2,          1,      $(_ID)$(_UNIT)  }
 }

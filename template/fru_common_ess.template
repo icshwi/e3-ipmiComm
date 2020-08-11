@@ -37,22 +37,22 @@ record(bi, "$(dev):$(id)$(unit)P") {
 #   field(EIST, "Communication Lost")
 # }
 
-record(ai, "$(dev):$(id)$(unit)FRUID") {
+record(ai, "$(dev):$(id)$(unit)FruId") {
   field(DESC, "Module type")
   field(VAL,  "$(fruid)")
   field(PINI, "YES")
 }
 
-record(stringin, "$(dev):$(id)$(unit)BMANUF") {
+record(stringin, "$(dev):$(id)$(unit)BManuf") {
   field(DESC, "Board manufacturer")
   field(SCAN, "I/O Intr")
   field(DTYP, "FRUinfo")
   field(INP, "#B$(fruid) C0 N0  @$(link)+bmf")
   field(PINI, "YES")
-  field(FLNK, "$(dev):$(id)$(unit)BPRODNAME")
+  field(FLNK, "$(dev):$(id)$(unit)BProdName")
 }
 
-record(stringin, "$(dev):$(id)$(unit)BPRODNAME") {
+record(stringin, "$(dev):$(id)$(unit)BProdName") {
   field(DESC, "Board product name")
   field(DTYP, "FRUinfo")
   field(INP, "#B$(fruid) C0 N0  @$(link)+bp")
@@ -63,24 +63,24 @@ record(stringin, "$(dev):$(id)$(unit)BSN") {
   field(DESC, "Board serial number")
   field(DTYP, "FRUinfo")
   field(INP, "#B$(fruid) C0 N0  @$(link)+bsn")
-  field(FLNK, "$(dev):$(id)$(unit)BPARTNUMBER")
+  field(FLNK, "$(dev):$(id)$(unit)BPartNumber")
 }
 
-record(stringin, "$(dev):$(id)$(unit)BPARTNUMBER") {
+record(stringin, "$(dev):$(id)$(unit)BPartNumber") {
   field(DESC, "Board part number")
   field(DTYP, "FRUinfo")
   field(INP, "#B$(fruid) C0 N0  @$(link)+bpn")
-  field(FLNK, "$(dev):$(id)$(unit)PMANUF")
+  field(FLNK, "$(dev):$(id)$(unit)PManuf")
 }
 
-record(stringin, "$(dev):$(id)$(unit)PMANUF") {
+record(stringin, "$(dev):$(id)$(unit)PManuf") {
   field(DESC, "Product manufacturer")
   field(DTYP, "FRUinfo")
   field(INP, "#B$(fruid) C0 N0  @$(link)+pmf")
-  field(FLNK, "$(dev):$(id)$(unit)PPRODNAME")
+  field(FLNK, "$(dev):$(id)$(unit)PProdName")
 }
 
-record(stringin, "$(dev):$(id)$(unit)PPRODNAME") {
+record(stringin, "$(dev):$(id)$(unit)PProdName") {
   field(DESC, "Product product name")
   field(DTYP, "FRUinfo")
   field(INP, "#B$(fruid) C0 N0  @$(link)+pp")
@@ -91,10 +91,10 @@ record(stringin, "$(dev):$(id)$(unit)PSN") {
   field(DESC, "Product serial number")
   field(DTYP, "FRUinfo")
   field(INP, "#B$(fruid) C0 N0  @$(link)+psn")
-  field(FLNK, "$(dev):$(id)$(unit)PPARTNUMBER")
+  field(FLNK, "$(dev):$(id)$(unit)PPartNumber")
 }
 
-record(stringin, "$(dev):$(id)$(unit)PPARTNUMBER") {
+record(stringin, "$(dev):$(id)$(unit)PPartNumber") {
   field(DESC, "Product part number")
   field(DTYP, "FRUinfo")
   field(INP, "#B$(fruid) C0 N0  @$(link)+ppn")
@@ -103,7 +103,7 @@ record(stringin, "$(dev):$(id)$(unit)PPARTNUMBER") {
 # Troublesome to access the following PVs
 # with Schroff MTCA / NAT-MCH, and so on.
 #
-# record(mbbo, "$(dev):$(id)$(unit)POWERCTL") {
+# record(mbbo, "$(dev):$(id)$(unit)PowerCtl") {
 #   field(DESC, "Payload power control")
 #   field(DTYP, "MCHsensor")
 #   field(OMSL, "supervisory")
@@ -114,49 +114,49 @@ record(stringin, "$(dev):$(id)$(unit)PPARTNUMBER") {
 # #  field(TWST, "Hard reset")
 # }
 
-# record(ai, "$(dev):$(id)$(unit)PWR") {
+# record(ai, "$(dev):$(id)$(unit)Pwr") {
 #   field(DESC, "Steady state power draw")
 #   field(SCAN, "10 second")
 #   field(DTYP, "FRUinfo")
 #   field(INP, "#B$(fruid) C0 N0  @$(link)+pwr")
 #   field(EGU, "W")
-#   field(FLNK, "$(dev):$(id)$(unit)PWRDES")
+#   field(FLNK, "$(dev):$(id)$(unit)PwrDes")
 # }
 
-# record(ai, "$(dev):$(id)$(unit)PWRDES") {
+# record(ai, "$(dev):$(id)$(unit)PwrDes") {
 #   field(DESC, "Desired steady state power draw")
 #   field(DTYP, "FRUinfo")
 #   field(INP, "#B$(fruid) C1 N0  @$(link)+pwr")
 #   field(EGU, "W")
-#   field(FLNK, "$(dev):$(id)$(unit)EPWR")
+#   field(FLNK, "$(dev):$(id)$(unit)EPwr")
 # }
 
-# record(ai, "$(dev):$(id)$(unit)EPWR") {
+# record(ai, "$(dev):$(id)$(unit)EPwr") {
 #   field(DESC, "Early power draw")
 #   field(DTYP, "FRUinfo")
 #   field(INP, "#B$(fruid) C2 N0  @$(link)+pwr")
 #   field(EGU, "W")
-#   field(FLNK, "$(dev):$(id)$(unit)EPWRDES")
+#   field(FLNK, "$(dev):$(id)$(unit)EPwrDes")
 # }
 
-# record(ai, "$(dev):$(id)$(unit)EPWRDES") {
+# record(ai, "$(dev):$(id)$(unit)EPwrDes") {
 #   field(DESC, "Desired early power draw")
 #   field(DTYP, "FRUinfo")
 #   field(INP, "#B$(fruid) C3 N0  @$(link)+pwr")
 #   field(EGU, "W")
-#   field(FLNK, "$(dev):$(id)$(unit)PWRDLY")
+#   field(FLNK, "$(dev):$(id)$(unit)PwrDly")
 # }
 
-# record(ai, "$(dev):$(id)$(unit)PWRDLY") {
+# record(ai, "$(dev):$(id)$(unit)PwrDly") {
 #   field(DESC, "FRU delay to stable power")
 #   field(DTYP, "FRUinfo")
 #   field(INP, "#B$(fruid) C4 N0  @$(link)+pwr")
 #   field(EGU, "s")
-#   field(FLNK, "$(dev):$(id)$(unit)PWRDYN")
+#   field(FLNK, "$(dev):$(id)$(unit)PwrDyn")
 # }
 
 
-# record(mbbi, "$(dev):$(id)$(unit)PWRDYN")
+# record(mbbi, "$(dev):$(id)$(unit)PwrDyn")
 # {
 #   field(DESC, "FRU supports dynamic pwr reconfig")
 #   field(DTYP, "MCHsensor")

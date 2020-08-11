@@ -98,27 +98,27 @@ pattern { id,       fruid   }
 file "sensor_ai_ess.template"
 {
 pattern { id,   fruid,  attr,       sensinst,   type,   prefix          }
-        { MCH,  3,      CPUTEMP-,   1,          1,      $(id)$(unit)    }
-        { MCH,  3,      IOTEMP-,    2,          1,      $(id)$(unit)    }
+        { MCH,  3,      CpuTemp-,   1,          1,      $(id)$(unit)    }
+        { MCH,  3,      IoTemp-,    2,          1,      $(id)$(unit)    }
         { MCH,  3,      BA1d2V-,    1,          2,      $(id)$(unit)    }
         { MCH,  3,      BA1d5V-,    2,          2,      $(id)$(unit)    }
         { MCH,  3,      BA1d8V-,    3,          2,      $(id)$(unit)    }
         { MCH,  3,      BA2d5V-,    4,          2,      $(id)$(unit)    }
         { MCH,  3,      BA3d3V-,    5,          2,      $(id)$(unit)    }
         { MCH,  3,      BA12V-,     6,          2,      $(id)$(unit)    }
-        { MCH,  3,      BASEI-,     1,          3,      $(id)$(unit)    }
-        { CLK,  60,     DTEMP-,     1,          1,      $(id)$(unit)    }
-        { CLK,  60,     DMAXTEMP-,  2,          1,      $(id)$(unit)    }
-        { CLK,  60,     MTEMP-,     3,          1,      $(id)$(unit)    }
-        { CLK,  60,     MMAXTEMP-,  4,          1,      $(id)$(unit)    }
+        { MCH,  3,      BaseI-,     1,          3,      $(id)$(unit)    }
+        { CLK,  60,     DTemp-,     1,          1,      $(id)$(unit)    }
+        { CLK,  60,     DMaxTemp-,  2,          1,      $(id)$(unit)    }
+        { CLK,  60,     MTemp-,     3,          1,      $(id)$(unit)    }
+        { CLK,  60,     MMaxTemp-,  4,          1,      $(id)$(unit)    }
         { CLK,  60,     3d3V-,      1,          2,      $(id)$(unit)    }
         { CLK,  60,     12V-,       2,          2,      $(id)$(unit)    }
-        { HUB,  61,     DTEMP-,     1,          1,      $(id)$(unit)    }
-        { HUB,  61,     DMAXTEMP-,  2,          1,      $(id)$(unit)    }
-        { HUB,  61,     STEMP-,     3,          1,      $(id)$(unit)    }
-        { HUB,  61,     SMAXTEMP-,  4,          1,      $(id)$(unit)    }
-        { HUB,  61,     PTEMP-,     5,          1,      $(id)$(unit)    }
-        { HUB,  61,     PMAXTEMP-,  6,          1,      $(id)$(unit)    }
+        { HUB,  61,     DTemp-,     1,          1,      $(id)$(unit)    }
+        { HUB,  61,     DMaxTemp-,  2,          1,      $(id)$(unit)    }
+        { HUB,  61,     STemp-,     3,          1,      $(id)$(unit)    }
+        { HUB,  61,     SMaxTemp-,  4,          1,      $(id)$(unit)    }
+        { HUB,  61,     PTemp-,     5,          1,      $(id)$(unit)    }
+        { HUB,  61,     PMaxTemp-,  6,          1,      $(id)$(unit)    }
         { HUB,  61,     d9V-,       1,          2,      $(id)$(unit)    }
         { HUB,  61,     d9AnaV-,    2,          2,      $(id)$(unit)    }
         { HUB,  61,     1d8V-,      3,          2,      $(id)$(unit)    }

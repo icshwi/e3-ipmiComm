@@ -41,17 +41,17 @@ pattern { unit      }
 file "sensor_ai_ess.template"
 {
 pattern { attr,     sensinst,   type,   prefix          }
-        { PP12V-,   1,          2,      $(_ID)$(_UNIT)  }
-        { PP3d3V-,  2,          2,      $(_ID)$(_UNIT)  }
-        { CORd95V-, 3,          2,      $(_ID)$(_UNIT)  }
-        { 2d5V-,    4,          2,      $(_ID)$(_UNIT)  }
-        { 1d8V-,    5,          2,      $(_ID)$(_UNIT)  }
-        { DDR1d2V-, 6,          2,      $(_ID)$(_UNIT)  }
-        { RTMPPI-,  1,          3,      $(_ID)$(_UNIT)  }
-        { RTMMPI-,  2,          3,      $(_ID)$(_UNIT)  }
-        { INLTEMP-, 1,          1,      $(_ID)$(_UNIT)  }
-        { OUTTEMP-, 2,          1,      $(_ID)$(_UNIT)  }
-        { MIDTEMP-, 3,          1,      $(_ID)$(_UNIT)  }
-        { PCBTEMP-, 4,          1,      $(_ID)$(_UNIT)  }
-        { DIETEMP-, 5,          1,      $(_ID)$(_UNIT)  }
+        { Pp12V-,   1,          2,      $(_ID)$(_UNIT)  }
+        { Pp3d3V-,  2,          2,      $(_ID)$(_UNIT)  }
+        { CorD95V-, 3,          2,      $(_ID)$(_UNIT)  }
+        { 2D5V-,    4,          2,      $(_ID)$(_UNIT)  }
+        { 1D8V-,    5,          2,      $(_ID)$(_UNIT)  }
+        { Ddr1D2V-, 6,          2,      $(_ID)$(_UNIT)  }
+        { RtmPpI-,  1,          3,      $(_ID)$(_UNIT)  }
+        { RtmMpI-,  2,          3,      $(_ID)$(_UNIT)  }
+        { InlTemp-, 1,          1,      $(_ID)$(_UNIT)  }
+        { OutTemp-, 2,          1,      $(_ID)$(_UNIT)  }
+        { MidTemp-, 3,          1,      $(_ID)$(_UNIT)  }
+        { PcbTemp-, 4,          1,      $(_ID)$(_UNIT)  }
+        { DieTemp-, 5,          1,      $(_ID)$(_UNIT)  }
 }

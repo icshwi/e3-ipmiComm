@@ -47,10 +47,10 @@ pattern { attr,         sensinst,   type    }
         { 3d3V-,        1,          2       }
         { 12V-,         2,          2       }
         { 12V-,         3,          2       }
-        { LM75TEMP1-,   1,          1       }
-        { LM75TEMP2-,   2,          1       }
-        { FAN1-,        1,          4       }
-        { FAN2-,        2,          4       }
-        { FAN3-,        3,          4       }
-        { FAN4-,        4,          4       }
+        { Lm75Temp,     1,          1       }
+        { Lm75Temp,     2,          1       }
+        { Fan,          1,          4       }
+        { Fan,          2,          4       }
+        { Fan,          3,          4       }
+        { Fan,          4,          4       }
 }

@@ -53,30 +53,30 @@ pattern {} {}
 file "sensor_ai_ess.template"
 {
 pattern { attr,         sensinst,   type    }
-        { CPU0TEMP-,    1,          1       }
-        { XFRMTEMP-,    2,          1       }
-        { PSB0TEMP-,    3,          1       }
-        { PFC0TEMP-,    4,          1       }
-        { REC0TEMP-,    5,          1       }
-        { ACINV-,       1,          2       }
-        { DCINV-,       2,          2       }
+        { Cpu0Temp-,    1,          1       }
+        { XfrmTemp-,    2,          1       }
+        { Psb0Temp-,    3,          1       }
+        { Pfc0Temp-,    4,          1       }
+        { Rec0Temp-,    5,          1       }
+        { AcInV-,       1,          2       }
+        { DcInV-,       2,          2       }
         { 12V-,         3,          2       }
         { 3d3V-,        4,          2       }
-        { SUM0I-,       1,          3       }
-        { CH01I-,       2,          3       }
-        { CH02I-,       3,          3       }
-        { CH03I-,       4,          3       }
-        { CH04I-,       5,          3       }
-        { CH05I-,       6,          3       }
-        { CH06I-,       7,          3       }
-        { CH07I-,       8,          3       }
-        { CH08I-,       9,          3       }
-        { CH09I-,       10,         3       }
-        { CH10I-,       11,         3       }
-        { CH11I-,       12,         3       }
-        { CH12I-,       13,         3       }
-        { CH13I-,       14,         3       }
-        { CH14I-,       15,         3       }
-        { CH15I-,       16,         3       }
-        { CH16I-,       17,         3       }
+        { Sum0I-,       1,          3       }
+        { Ch01I-,       2,          3       }
+        { Ch02I-,       3,          3       }
+        { Ch03I-,       4,          3       }
+        { Ch04I-,       5,          3       }
+        { Ch05I-,       6,          3       }
+        { Ch06I-,       7,          3       }
+        { Ch07I-,       8,          3       }
+        { Ch08I-,       9,          3       }
+        { Ch09I-,       10,         3       }
+        { Ch10I-,       11,         3       }
+        { Ch11I-,       12,         3       }
+        { Ch12I-,       13,         3       }
+        { Ch13I-,       14,         3       }
+        { Ch14I-,       15,         3       }
+        { Ch15I-,       16,         3       }
+        { Ch16I-,       17,         3       }
 }
