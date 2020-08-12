@@ -1,6 +1,6 @@
 # For system in which cannot read 
 # power state, populate this PV 
-record(stringin, "$(dev):PowerState") {
+record(stringin, "$(dev):PwrState") {
   field(DESC, "Power on state")
   field(INP, "")
   field(VAL,  "No info")

@@ -38,10 +38,10 @@ pattern { unit      }
 file "sensor_ai_ess.template"
 {
 pattern { attr,         sensinst,   type,   prefix          }
-        { PcbTTemp-,    1,          1,      $(_ID)$(_UNIT)  }
-        { PcbBTemp-,    2,          1,      $(_ID)$(_UNIT)  }
-        { CpuDTemp-,    3,          1,      $(_ID)$(_UNIT)  }
-        { CpuSTemp-,    4,          1,      $(_ID)$(_UNIT)  }
+        { PcbTopTemp-,  1,          1,      $(_ID)$(_UNIT)  }
+        { PcbBotTemp-,  2,          1,      $(_ID)$(_UNIT)  }
+        { CpuDieTemp-,  3,          1,      $(_ID)$(_UNIT)  }
+        { CpuSideTemp-, 4,          1,      $(_ID)$(_UNIT)  }
         { VAA1V0V-,     1,          2,      $(_ID)$(_UNIT)  }
         { VAA1V2V-,     2,          2,      $(_ID)$(_UNIT)  }
         { VAA1V35V-,    3,          2,      $(_ID)$(_UNIT)  }

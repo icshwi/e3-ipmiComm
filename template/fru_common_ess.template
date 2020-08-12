@@ -1,6 +1,6 @@
 # FRU 'presence' record to indicate whether FRU
 # is active; used by edm visibility rules
-record(bi, "$(dev):$(id)$(unit)P") {
+record(bi, "$(dev):$(id)$(unit)Pres") {
   field(DESC, "Module presence")
   field(SCAN, "I/O Intr")
   field(DTYP, "MCHsensor")
@@ -103,7 +103,7 @@ record(stringin, "$(dev):$(id)$(unit)PPartNumber") {
 # Troublesome to access the following PVs
 # with Schroff MTCA / NAT-MCH, and so on.
 #
-# record(mbbo, "$(dev):$(id)$(unit)PowerCtl") {
+# record(mbbo, "$(dev):$(id)$(unit)PwrCtl") {
 #   field(DESC, "Payload power control")
 #   field(DTYP, "MCHsensor")
 #   field(OMSL, "supervisory")
@@ -154,7 +154,6 @@ record(stringin, "$(dev):$(id)$(unit)PPartNumber") {
 #   field(EGU, "s")
 #   field(FLNK, "$(dev):$(id)$(unit)PwrDyn")
 # }
-
 
 # record(mbbi, "$(dev):$(id)$(unit)PwrDyn")
 # {

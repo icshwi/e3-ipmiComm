@@ -10,58 +10,56 @@ record(longin, "$(dev):ChasStat") {
  field(DTYP, "MCHsensor")
  field(SCAN, "5 second")
  field(INP, "#B0 C0 N0 @$(link)+chas")
- field(FLNK, "$(dev):PowerInfo_Calc")
+ field(FLNK, "$(dev):PwrInfo_Calc")
 }
 
-record(calc, "$(dev):PowerInfo_Calc") {
+record(calc, "$(dev):PwrInfo_Calc") {
  field(DESC, "Chassis power info")
  field(CALC, "A & 0x7F")
  field(INPA, "$(dev):ChasStat MS")
- field(FLNK, "$(dev):PowerStat_Calc")
+ field(FLNK, "$(dev):PwrStat_Calc")
 }
 
-record(calc, "$(dev):PowerStat_Calc") {
+record(calc, "$(dev):PwrStat_Calc") {
  field(DESC, "Chassis power status")
  field(CALC, "A & 0x1F")
- field(INPA, "$(dev):PowerInfo_Calc MS")
- field(FLNK, "$(dev):PowerStat")
+ field(INPA, "$(dev):PwrInfo_Calc MS")
+ field(FLNK, "$(dev):PwrStat")
 }
 
-record(longin,"$(dev):PowerStat") {
+record(longin,"$(dev):PwrStat") {
   field(DESC, "Chassis power status")
-  field(INP,  "$(dev):PowerStat_Calc MS")
-  field(FLNK, "$(dev):PowerState_Calc")
+  field(INP,  "$(dev):PwrStat_Calc MS")
+  field(FLNK, "$(dev):PwrState_Calc")
 }
 
-# Name POWERSTATE to be consistent with other 
-# SLAC systems
-record(calc,  "$(dev):PowerState_Calc") {
+record(calc,  "$(dev):PwrState_Calc") {
   field(DESC, "Power on state")
   field(CALC, "A & 0x1")
-  field(INPA, "$(dev):PowerStat MS")
-  field(FLNK, "$(dev):PowerState")
+  field(INPA, "$(dev):PwrStat MS")
+  field(FLNK, "$(dev):PwrState")
 }
 
-record(bi,    "$(dev):PowerState") {
+record(bi,    "$(dev):PwrState") {
   field(DESC, "Power on state")
-  field(INP,  "$(dev):PowerState_Calc MS")
+  field(INP,  "$(dev):PwrState_Calc MS")
   field(ZNAM, "Not on")
   field(ZSV,  "MAJOR")
   field(ONAM, "On")
   field(OSV,  "NO_ALARM")
-  field(FLNK, "$(dev):PowerPolicy_Calc")
+  field(FLNK, "$(dev):PwrPolicy_Calc")
 }
 
-record(calc, "$(dev):PowerPolicy_Calc") {
+record(calc, "$(dev):PwrPolicy_Calc") {
  field(DESC, "Chassis power policy")
  field(CALC, "(A & 0x60)>>5")
- field(INPA, "$(dev):PowerInfo_Calc MS")
- field(FLNK, "$(dev):PowerPolicy")
+ field(INPA, "$(dev):PwrInfo_Calc MS")
+ field(FLNK, "$(dev):PwrPolicy")
 }
 
-record(mbbi,  "$(dev):PowerPolicy") {
+record(mbbi,  "$(dev):PwrPolicy") {
   field(DESC, "Chassis power policy")
-  field(INP,  "$(dev):PowerPolicy_Calc")
+  field(INP,  "$(dev):PwrPolicy_Calc")
   field(ZRST, "Remains off")
   field(ZRVL, "0")
   field(ONST, "Previous state")
@@ -83,17 +81,17 @@ record(calc, "$(dev):MiscStat_Calc") {
 record(longin, "$(dev):MiscStat") {
  field(DESC, "Chassis misc status")
  field(INP,  "$(dev):MiscStat_Calc MS")
- field(FLNK, "$(dev):LastPower_Calc")
+ field(FLNK, "$(dev):LastPwr_Calc")
 }
 
-record(calc, "$(dev):LastPower_Calc") {
+record(calc, "$(dev):LastPwr_Calc") {
  field(DESC, "Last power event")
  field(CALC, "(A & 0x1F00)>>8")
  field(INPA, "$(dev):ChasStat MS")
- field(FLNK, "$(dev):LastPower")
+ field(FLNK, "$(dev):LastPwr")
 }
 
-record(mbbi, "$(dev):LastPower") {
+record(mbbi, "$(dev):LastPwr") {
  field(DESC, "Last power event")
  field(INP,  "$(dev):LastPower_Calc MS")
  field(ZRST, "N/A")

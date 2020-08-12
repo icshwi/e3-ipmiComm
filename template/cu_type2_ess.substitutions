@@ -44,7 +44,7 @@ pattern {} {}
 file "sensor_ai_ess.template"
 {
 pattern { attr,         sensinst,   type    }
-        { 3d3V-,        1,          2       }
+        { 3D3V-,        1,          2       }
         { 12V-,         2,          2       }
         { 12V-,         3,          2       }
         { Lm75Temp,     1,          1       }

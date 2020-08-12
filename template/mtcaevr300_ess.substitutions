@@ -71,6 +71,6 @@ pattern { attr,         sensinst,   type,   prefix          }
         { 12dV-,        6,          2,      $(_ID)$(_UNIT)  }
         { 3d3V-,        7,          2,      $(_ID)$(_UNIT)  }
         { Mp3d3V-,      8,          2,      $(_ID)$(_UNIT)  }
-        { LocaTemp-,    1,          1,      $(_ID)$(_UNIT)  }
+        { LocalTemp-,    1,          1,      $(_ID)$(_UNIT)  }
         { FpgaTemp-,    2,          1,      $(_ID)$(_UNIT)  }
 }
