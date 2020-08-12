@@ -37,12 +37,12 @@ pattern {} {}
 file "sensor_ai_ess.template"
 {
 pattern { attr,         sensinst,   type    }
-        { CpuITemp,     1,          1       }
-        { CpuATemp,     2,          1       }
+        { CpuIntTemp,   1,          1       }
+        { CpuAmbiTemp,  2,          1       }
         { AmbiTemp,     3,          1       }
         { Psu12V,       1,          2       }
         { Psu5V,        2,          2       }
-        { Psu3D3V,      3,          2       }
+        { Psu3d3V,      3,          2       }
         { Ps1V05V,      4,          2       }
         { Ps1V0V,       5,          2       }
         { CoreV,        6,          2       }

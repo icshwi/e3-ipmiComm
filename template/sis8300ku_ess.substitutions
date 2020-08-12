@@ -44,8 +44,8 @@ pattern { attr,     sensinst,   type,   prefix          }
         { Pp12V,    1,          2,      $(_ID)$(_UNIT)  }
         { Pp3d3V,   2,          2,      $(_ID)$(_UNIT)  }
         { CorD95V,  3,          2,      $(_ID)$(_UNIT)  }
-        { 2D5V,     4,          2,      $(_ID)$(_UNIT)  }
-        { 1D8V,     5,          2,      $(_ID)$(_UNIT)  }
+        { 2d5V,     4,          2,      $(_ID)$(_UNIT)  }
+        { 1d8V,     5,          2,      $(_ID)$(_UNIT)  }
         { Ddr1D2V,  6,          2,      $(_ID)$(_UNIT)  }
         { RtmPpI,   1,          3,      $(_ID)$(_UNIT)  }
         { RtmMpI,   2,          3,      $(_ID)$(_UNIT)  }

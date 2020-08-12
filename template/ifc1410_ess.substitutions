@@ -49,5 +49,5 @@ pattern { attr,         sensinst,   type,   prefix          }
         { VBB1V0V,      5,          2,      $(_ID)$(_UNIT)  }
         { VCC1V0V,      6,          2,      $(_ID)$(_UNIT)  }
         { VCC1V35V,     7,          2,      $(_ID)$(_UNIT)  }
-        { FpgaCorV,     8,          2,      $(_ID)$(_UNIT)  }
+        { FpgaCoreV,    8,          2,      $(_ID)$(_UNIT)  }
 }
