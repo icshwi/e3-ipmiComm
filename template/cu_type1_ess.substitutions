@@ -41,13 +41,13 @@ file "sensor_ai_ess.template"
 pattern { attr,         sensinst,   type    }
         { Lm75Temp,     1,          1       }
         { Lm75Temp,     2,          1       }
-        { 3D3V-,        1,          2       }
-        { 12V-,         2,          2       }
-        { 12V-,         3,          2       }
-        { Fan,          1,          4       }
-        { Fan,          2,          4       }
-        { Fan,          3,          4       }
-        { Fan,          4,          4       }
-        { Fan,          5,          4       }
-        { Fan,          6,          4       }
+        { 3D3V,         1,          2       }
+        { 12V,          2,          2       }
+        { 12V,          3,          2       }
+        { Fan1,         1,          4       }
+        { Fan2,         2,          4       }
+        { Fan3,         3,          4       }
+        { Fan4,         4,          4       }
+        { Fan5,         5,          4       }
+        { Fan6,         6,          4       }
 }
