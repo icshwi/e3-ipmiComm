@@ -1,10 +1,10 @@
+# Deprecation notice
+
+2020-08-12: This remote has been deprecated. Moved to https://gitlab.esss.lu.se/e3/common/e3-ipmiComm.
+
 # e3-ipmiComm
 
 ESS Site-specific EPICS module : ipmiComm
-
-## Deprecation notice
-
-2020-08-12: This remote has been deprecated. Moved to https://gitlab.esss.lu.se/e3/common/e3-ipmiComm.
 
 ## Dependencies
 
