@@ -1,6 +1,6 @@
 # ai sensor record
 # DESC, EGU set by device support
-record(ai, "$(dev):$(prefix)$(attr)$(number=)")
+record(ai, "$(dev):$(prefix)$(attr)$(number)")
 {
     field(DESC, "")
     field(SCAN, "I/O Intr")
@@ -14,7 +14,7 @@ record(ai, "$(dev):$(prefix)$(attr)$(number=)")
 
 # sensor 'presence' record to indicate whether sensor 
 # is active; used by edm visibility rules
-record(bi, "$(dev):$(prefix)$(attr)$(number=)Pres")
+record(bi, "$(dev):$(prefix)$(attr)$(number)Pres")
 {
     field(DESC, "Sensor presence")
     field(SCAN, "I/O Intr")
